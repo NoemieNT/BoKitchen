@@ -7,10 +7,10 @@ export default function NavMain() {
       <NavLink exact to="/">
         home
       </NavLink>
-      {/* <NavLink to="/all-students">all students</NavLink>
-      <NavLink to="/all-cohorts">all cohorts</NavLink>
-      <NavLink to="/create-student">+ student</NavLink>
-      <NavLink to="/create-cohort">+ cohort</NavLink> */}
+      <NavLink to="/menu">Menu</NavLink>
+      <NavLink to="/cart"> Cart </NavLink>
+      <NavLink to="/myaccount">My Account</NavLink>
+      <NavLink to="/SignIn">Sign In</NavLink>
     </nav>
   );
 }
