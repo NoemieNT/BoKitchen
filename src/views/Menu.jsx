@@ -8,8 +8,6 @@ export class Menu extends Component {
     return (
       <div>
         <GeneralTable />
-        <FoodBox />
-        <ProductsTable />
       </div>
     );
   }

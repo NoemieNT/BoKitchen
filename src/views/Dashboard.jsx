@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-import DashboardContainer from "../components/DashboardContainer";
-import OrderDetails from "../components/OrderDetails";
+import MapWrap from "../components/MapWrap";
+import DelivererOrdersTable from "../components/DelivererOrdersTable";
 
 export class Dashboard extends Component {
   render() {
     return (
       <div className="container">
+      <h1>Welcome</h1>
         <div className="row">
           <div className="col">
-            <DashboardContainer />
+          <MapWrap />
           </div>
           <div className="col">
-            <OrderDetails />
+          <DelivererOrdersTable />
           </div>
         </div>
       </div>

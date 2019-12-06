@@ -9,7 +9,6 @@ export class DashboardContainer extends Component {
       <div>
         <h1>Welcome to your dashboard</h1>
         <MapWrap />
-        <Checkboxes />
         <DelivererOrdersTable />
       </div>
     );

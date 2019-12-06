@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import FoodBox from "./FoodBox";
 
 export class ProductsTable extends Component {
   render() {
-    return <div>Je suis ProductsTable</div>;
+    return (
+      <div>
+        <FoodBox />
+      </div>
+    );
   }
 }
 

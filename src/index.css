@@ -33,14 +33,18 @@ code {
   text-decoration: none;
 }
 
-.auth-container{
+.auth-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 
-th{
-  background : rgb(8, 105, 129);
-  color: white;
+th {
+  background: rgb(183, 221, 228);
+  color: black;
+}
+
+area:hover {
+  fill-opacity: 1;
 }

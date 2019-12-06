@@ -10,6 +10,7 @@ export default class Login extends Component {
           <div className="form-group">
             <label>Email address</label>
             <input
+              name="email"
               type="email"
               className="form-control"
               placeholder="Enter email"
@@ -19,6 +20,7 @@ export default class Login extends Component {
           <div className="form-group">
             <label>Password</label>
             <input
+              name="password"
               type="password"
               className="form-control"
               placeholder="Enter password"
@@ -28,12 +30,13 @@ export default class Login extends Component {
           <div className="form-group">
             <div className="custom-control custom-checkbox">
               <input
+                name="deliverer"
                 type="checkbox"
                 className="custom-control-input"
                 id="customCheck1"
               />
               <label className="custom-control-label" htmlFor="customCheck1">
-                Remember me
+                I'm a deliverer
               </label>
             </div>
           </div>
