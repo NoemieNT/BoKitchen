@@ -1,7 +1,6 @@
 import React from "react";
-import DelivererOrderRow from "./DelivererOrderRow";
 
-export default function DelivererOrdersTable() {
+export default function DelivererOrdersTable({ validatedOrders }) {
   return (
     <div>
       <table className="table table-striped table-responsive{-sm|-md|-lg|-xl}">
@@ -15,7 +14,28 @@ export default function DelivererOrdersTable() {
           </tr>
         </thead>
         <tbody>
-          <DelivererOrderRow />
+          {!validatedOrders.length ? (
+            <tr>
+              <td colspan="5">No order to display</td>
+            </tr>
+          ) : (
+            validatedOrders.map((validatedOrders, i) => (
+            <tr key={i}>
+              <th scope="row">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="filter-status"
+                  name="status"
+                  value="VALIDATED"
+                />
+              </th>
+              <td>{validatedOrders._id}</td>
+              <td>{validatedOrders.address}</td>
+              <td>{validatedOrders.zipcode}</td>
+              <td>{validatedOrders.date}</td>
+            </tr>
+          )))}
         </tbody>
       </table>
     </div>

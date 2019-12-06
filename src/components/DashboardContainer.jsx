@@ -7,7 +7,6 @@ export class DashboardContainer extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to your dashboard</h1>
         <MapWrap />
         <DelivererOrdersTable />
       </div>

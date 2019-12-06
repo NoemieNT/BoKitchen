@@ -12,12 +12,11 @@ export default class OrderDetails extends Component {
             <p className="card-text">Delivery information</p>
             <h5 className="card-title">Details</h5>
             <p className="card-text">ligne de commande (component à faire)</p>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Sous-total : x €</li>
-              <li class="list-group-item">Frais de livraison : x €</li>
-              <li class="list-group-item">Total : x €</li>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">Sous-total : x €</li>
+              <li className="list-group-item">Frais de livraison : x €</li>
+              <li className="list-group-item">Total : x €</li>
             </ul>
-           
 
             {/* <a href="#" className="btn btn-primary">
               Go somewhere
