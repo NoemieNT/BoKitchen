@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DelivererOrdersTable({ validatedOrders }) {
+export default function DelivererOrdersTable({ validatedOrders, handleClick }) {
   return (
     <div>
       <table className="table table-striped table-responsive{-sm|-md|-lg|-xl}">
@@ -20,22 +20,30 @@ export default function DelivererOrdersTable({ validatedOrders }) {
             </tr>
           ) : (
             validatedOrders.map((validatedOrders, i) => (
-            <tr key={i}>
-              <th scope="row">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="filter-status"
-                  name="status"
-                  value="VALIDATED"
-                />
-              </th>
-              <td>{validatedOrders._id}</td>
-              <td>{validatedOrders.address}</td>
-              <td>{validatedOrders.zipcode}</td>
-              <td>{validatedOrders.date}</td>
-            </tr>
-          )))}
+              <tr key={i}>
+                <th scope="row">
+                  {/* <input
+                    onClick={evt => handleClick(evt.target.value)}
+                    className="form-check-input"
+                    type="checkbox"
+                    id="filter-status"
+                    name="status"
+                    value={validatedOrders._id}
+                  /> */}
+                  <a
+                    href="/indelivery"
+                    onClick={evt => handleClick(validatedOrders._id)}
+                  >
+                    Take this one
+                  </a>
+                </th>
+                <td>{validatedOrders._id}</td>
+                <td>{validatedOrders.address}</td>
+                <td>{validatedOrders.zipcode}</td>
+                <td>{validatedOrders.date}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

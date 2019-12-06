@@ -1,10 +1,5 @@
 @import "./styles/form.css";
 
-/* * {
-  outline: dashed red;
-  ;
-} */
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -50,6 +45,6 @@ th {
   color: black;
 }
 
-area:hover {
-  fill-opacity: 1;
+area {
+  outline: 7px solid darkblue;
 }

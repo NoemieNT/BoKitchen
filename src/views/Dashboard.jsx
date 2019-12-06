@@ -18,7 +18,6 @@ const Dashboard = props => {
   }, []);
 
   const setZipcodeState = arrondissements => {
-    // console.log(arrondissements);
     setZipcodes(arrondissements);
   };
 
@@ -27,11 +26,20 @@ const Dashboard = props => {
       return validatedOrders;
     } else {
       return validatedOrders.filter(order => zipCodes.includes(order.zipcode));
-      // at the end this returns a filtered array en finction of arrondissements
     }
   };
 
-  console.log(typeof zipCodes);
+  const updateOrder = input => {
+    let updatedData = { status: "IN DELIVERY" };
+    axios
+      .patch(
+        process.env.REACT_APP_BACKEND_URL + "/edit-order/" + input,
+        updatedData
+      )
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
   return (
     <div className="container">
       <h1 className="text-center">Welcome "USER.NAME"</h1>
@@ -43,6 +51,7 @@ const Dashboard = props => {
         <div className="col">
           <DelivererOrdersTable
             validatedOrders={filterOrders(validatedOrders)}
+            handleClick={updateOrder}
           />
         </div>
       </div>

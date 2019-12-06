@@ -8,6 +8,7 @@ import Menu from "./views/Menu";
 import MyAccount from "./views/MyAccount";
 import SignIn from "./views/SignIn";
 import SignUp from "./views/SignUp";
+import inDelivery from "./views/InDelivery";
 
 // import component (view partials)
 import NavMain from "./components/NavMain";
@@ -34,6 +35,7 @@ function App() {
           <Route path="/myaccount" component={MyAccount} />
           <Route path="/signIn" component={SignIn} />
           <Route path="/signUp" component={SignUp} />
+          <Route path="/indelivery" component={inDelivery} />
         </Switch>
       </div>
     </React.Fragment>
