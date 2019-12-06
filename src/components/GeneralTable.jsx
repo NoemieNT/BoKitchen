@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import ProductsTable from "./ProductsTable";
 
 export class GeneralTable extends Component {
   render() {
-    return <div>JE SUIS UNE GENERAL GeneralTable</div>;
+    return (
+      <div>
+        <ProductsTable />
+      </div>
+    );
   }
 }
 
