@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export class MapWrap extends Component {
   clickArea = e => {
     e.preventDefault();
-    console.log(e.target.target);
     this.props.clbk(e.target.target);
   };
 

@@ -22,14 +22,6 @@ export default function DelivererOrdersTable({ validatedOrders, handleClick }) {
             validatedOrders.map((validatedOrders, i) => (
               <tr key={i}>
                 <th scope="row">
-                  {/* <input
-                    onClick={evt => handleClick(evt.target.value)}
-                    className="form-check-input"
-                    type="checkbox"
-                    id="filter-status"
-                    name="status"
-                    value={validatedOrders._id}
-                  /> */}
                   <a
                     href="/indelivery"
                     onClick={evt => handleClick(validatedOrders._id)}

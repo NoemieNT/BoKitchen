@@ -6,6 +6,7 @@ import axios from "axios";
 const Dashboard = props => {
   const [validatedOrders, setValidatedOrders] = useState([]);
   const [zipCodes, setZipcodes] = useState([]);
+  
   useEffect(() => {
     axios
       .get(process.env.REACT_APP_BACKEND_URL + "/validated-orders")

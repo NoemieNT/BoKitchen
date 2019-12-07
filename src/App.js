@@ -9,12 +9,12 @@ import MyAccount from "./views/MyAccount";
 import SignIn from "./views/SignIn";
 import SignUp from "./views/SignUp";
 import inDelivery from "./views/InDelivery";
+import AdminMenu from "./views/AdminMenu";
 
 // import component (view partials)
 import NavMain from "./components/NavMain";
-import FoodBox from "./components/FoodBox";
 import Account from "./components/Account";
-import CreateFoodBox from "./components/CreateFoodBox";
+import CreateFood from "./components/CreateFood";
 import GeneralTable from "./components/GeneralTable";
 import ProductsTable from "./components/ProductsTable";
 import SearchBar from "./components/SearchBar";
@@ -36,6 +36,7 @@ function App() {
           <Route path="/signIn" component={SignIn} />
           <Route path="/signUp" component={SignUp} />
           <Route path="/indelivery" component={inDelivery} />
+          <Route path="/admin-menu" component={AdminMenu} />
         </Switch>
       </div>
     </React.Fragment>

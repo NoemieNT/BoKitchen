@@ -1,7 +1,7 @@
 import React from "react";
 import OrderDetails from "./OrderDetails";
 
-export default function OrderCard({ order }) {
+export default function OrderCard({ order, handleClick }) {
   return (
     <div>
       {order.map((order, i) => (
@@ -18,10 +18,13 @@ export default function OrderCard({ order }) {
             <li className="list-group-item">Frais de livraison : x €</li>
             <li className="list-group-item">Total : x €</li>
           </ul>
-
-          {/* <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a> */}
+          <a
+            href="/dashboard"
+            onClick={evt => handleClick(order._id)}
+            className="btn btn-primary"
+          >
+            Delivered
+          </a>
         </div>
       ))}
     </div>
