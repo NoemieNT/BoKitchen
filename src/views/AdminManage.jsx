@@ -27,8 +27,11 @@ const AdminManage = props => {
       .catch(err => console.log(err));
   };
 
-  const editFood = input => {
-    console.log("hello jedit " + input.target.id + "en " + input.target.textContent);
+  const editFood = (id, input) => {
+    axios
+      .patch(process.env.REACT_APP_BACKEND_URL + "/edit-food/" + id, input)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   };
 
   return (

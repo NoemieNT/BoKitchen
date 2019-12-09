@@ -5,6 +5,7 @@ import axios from "axios";
 
 const AdminCreate = props => {
   const createFood = infos => {
+    console.log(infos);
     axios
       .post(process.env.REACT_APP_BACKEND_URL + "/create-food", infos)
       .then(res => console.log(res))
