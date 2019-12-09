@@ -9,7 +9,9 @@ import MyAccount from "./views/MyAccount";
 import SignIn from "./views/SignIn";
 import SignUp from "./views/SignUp";
 import inDelivery from "./views/InDelivery";
-import AdminMenu from "./views/AdminMenu";
+import AdminManage from "./views/AdminManage";
+import AdminCreate from "./views/AdminCreate";
+import AdminDashboard from "./views/AdminDashboard";
 
 // import component (view partials)
 import NavMain from "./components/NavMain";
@@ -36,7 +38,9 @@ function App() {
           <Route path="/signIn" component={SignIn} />
           <Route path="/signUp" component={SignUp} />
           <Route path="/indelivery" component={inDelivery} />
-          <Route path="/admin-menu" component={AdminMenu} />
+          <Route path="/admin-dashboard" component={AdminDashboard} />
+          <Route path="/admin-manage" component={AdminManage} />
+          <Route path="/admin-create" component={AdminCreate} />
         </Switch>
       </div>
     </React.Fragment>
