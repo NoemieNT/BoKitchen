@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 // import the views
 import Home from "./views/Home";
-import Cart from "./views/Cart";
+
 import Dashboard from "./views/Dashboard";
 import Menu from "./views/Menu";
 import MyAccount from "./views/MyAccount";
@@ -20,7 +20,7 @@ import CreateFood from "./components/CreateFood";
 import GeneralTable from "./components/GeneralTable";
 import ProductsTable from "./components/ProductsTable";
 import SearchBar from "./components/SearchBar";
-
+import Cart from "./components/Cart";
 function App() {
   return (
     <React.Fragment>

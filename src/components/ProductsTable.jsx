@@ -9,11 +9,17 @@ const ProductsTable = props => {
     setFoods(exampleFood);
   }, []);
 
+  useEffect(() => {
+    console.log("food has been updated", foods);
+    const filtered = foods.filter(f => f.quantity > 0);
+    props.productSelectionClbk(filtered);
+  }, [foods]); // a chaque fois que foods change, cet effect est reexec
+
   const handleQuantityChange = (index, qty) => {
-    // console.log("coucou", foods, index, qty);
+    console.log(index, qty);
     const copy = [...foods];
     copy[index].quantity = qty;
-    setFoods(copy);
+    setFoods(copy); // action async
   };
 
   return (

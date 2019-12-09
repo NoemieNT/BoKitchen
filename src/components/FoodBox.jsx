@@ -36,15 +36,6 @@ export class FoodBox extends Component {
           </div>
         </div>
       </form>
-      //  {/* BOUTONS EDIT ET DELETE UNIQUEMENT SI ADMIN = EN ATTENTE DES
-      //             PROTECTED ROUTE */}
-      //             {/* <button className="btn btn-primary">Edit</button>
-      //             <button
-      //               onClick={evt => handleDelete(food._   id)}
-      //               className="btn btn-primary"
-      //             >
-      //               Delete
-      //             </button> */}
     );
   }
 }
