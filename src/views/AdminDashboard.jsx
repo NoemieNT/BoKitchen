@@ -30,12 +30,14 @@ const AdminDashboard = props => {
       setStatus(status.value);
     }
   };
+
+  
   const filterOrders = orders => {
     if (zipCodes.length === 0 && status.length === 0) {
       return orders;
-    } else if (status.length === 0) {
+    } else if (status.length === 0 && zipCodes.length !== 0) {
       return orders.filter(order => zipCodes.includes(order.zipcode));
-    } else if (zipCodes.length === 0) {
+    } else if (zipCodes.length === 0 && status.length !== 0) {
       return orders.filter(order => status.includes(order.status));
     } else {
       return orders

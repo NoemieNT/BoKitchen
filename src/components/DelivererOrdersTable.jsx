@@ -22,7 +22,7 @@ export default function DelivererOrdersTable({ validatedOrders, handleClick }) {
             validatedOrders.map((validatedOrders, i) => (
               <tr key={i}>
                 <th scope="row">
-                  <a
+                  <a id="deliveryChoice"
                     href="/indelivery"
                     onClick={evt => handleClick(validatedOrders._id)}
                   >

@@ -41,8 +41,12 @@ code {
 
 
 th {
-  background: rgb(183, 221, 228);
-  color: black;
+  background: darkblue;
+  color: white;
+}
+
+#deliveryChoice {
+  color: white
 }
 
 area {
