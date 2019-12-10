@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export class FilterableProductsTable extends Component {
-  state = { tags: [] };
+  state = { allTags: [], category: [], tags: [] };
 
   componentDidMount() {
     axios
       .get(process.env.REACT_APP_BACKEND_URL + "/all-tags")
       .then(res => {
-        this.setState({ tags: res.data });
+        this.setState({ allTags: res.data });
       })
       .catch(err => {
         console.log(err);
@@ -23,6 +23,7 @@ export class FilterableProductsTable extends Component {
           <h5>Category</h5>
           <div className="form-check">
             <input
+              onChange={e => this.props.productFilter(e.target)}
               className="form-check-input"
               type="checkbox"
               name="category"
@@ -38,6 +39,7 @@ export class FilterableProductsTable extends Component {
               type="checkbox"
               name="category"
               value="MAIN"
+              onChange={e => this.props.productFilter(e.target)}
             />
             <label className="form-check-label" htmlFor="category">
               Main
@@ -49,6 +51,7 @@ export class FilterableProductsTable extends Component {
               type="checkbox"
               name="category"
               value="DESSERT"
+              onChange={e => this.props.productFilter(e.target)}
             />
             <label className="form-check-label" htmlFor="category">
               Dessert
@@ -59,6 +62,7 @@ export class FilterableProductsTable extends Component {
               className="form-check-input"
               type="checkbox"
               name="category"
+              onChange={e => this.props.productFilter(e.target)}
               value="DRINK"
             />
             <label className="form-check-label" htmlFor="category">
@@ -69,13 +73,14 @@ export class FilterableProductsTable extends Component {
         <br></br>
         <div className="input-group d-flex flex-sm-column">
           <h5>Tags</h5>
-          {this.state.tags.map((tag, i) => (
+          {this.state.allTags.map((tag, i) => (
             <div className="form-check">
               <input
                 className="form-check-input"
                 type="checkbox"
                 name="tags"
                 value={tag._id}
+                onChange={e => this.props.productFilter(e.target)}
               />
               <label className="form-check-label" htmlFor="tags">
                 {tag.name}
