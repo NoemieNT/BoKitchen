@@ -42,11 +42,14 @@ export class Cart extends Component {
             </tbody>
           </table>
         )}
-        <form onSubmit={this.handleFormSubmit}>
-          <button className="btn btn-default" type="submit">
-            Save
-          </button>
-        </form>
+        <a
+          href="/checkout"
+          className="btn btn-primary"
+          role="button"
+          aria-pressed="true"
+        >
+          Checkout
+        </a>
       </div>
     );
   }

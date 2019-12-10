@@ -27,13 +27,31 @@ export class Menu extends Component {
 
   handleSelectedProducts = selectedProduct => {
     const copy = [...this.state.products];
-    copy.push({
-      index: selectedProduct.i,
-      quantity: selectedProduct.input.quantity
-    });
-    this.setState({ products: copy }, () => {
-      //   console.log(this.state.products);
-    });
+    const isAlreadyInProducts = this.state.products
+      .map((p, i) => p.id)
+      .includes(selectedProduct.input.id);
+
+    if (!isAlreadyInProducts) {
+      if (selectedProduct.input.quantity !== 0) {
+        copy.push({
+          index: selectedProduct.i,
+          quantity: selectedProduct.input.quantity,
+          id: selectedProduct.input.id
+        });
+        this.setState({ products: copy }, () => {});
+      }
+    } else {
+      let existingLine = this.state.products.filter(
+        element => element.id === selectedProduct.input.id
+      );
+      existingLine[0].quantity = selectedProduct.input.quantity;
+      if (selectedProduct.input.quantity !== 0) {
+        copy.push(existingLine[0]);
+      }
+      copy.splice(existingLine[0].index, 1);
+      this.setState({ products: copy });
+      console.log(existingLine);
+    }
   };
 
   setFilterProduct = input => {
@@ -78,28 +96,6 @@ export class Menu extends Component {
     });
   };
 
-  filteredFood = () => {
-    if (this.state.category.length === 0 && this.state.tags.length === 0) {
-      return this.state.foods;
-    } else if (
-      this.state.category.length === 0 &&
-      this.state.tags.length !== 0
-    ) {
-      return this.state.foods.filter(f => this.state.tags.includes(f.tags));
-    } else if (
-      !this.state.category.length == 0 &&
-      this.state.tags.length !== 0
-    ) {
-      return this.state.foods.filter(f =>
-        this.state.category.includes(f.category)
-      );
-    } else {
-      return this.state.foods
-        .filter(f => this.state.tags.includes(f.tags))
-        .filter(f => this.state.category.includes(f.category));
-    }
-  };
-
   render() {
     return (
       <div class="container">
@@ -118,7 +114,10 @@ export class Menu extends Component {
             />
           </div>
           <div className="col-md-3 order-md-3">
-            <Cart products={this.state.products} foods={this.state.foods} />
+            <Cart
+              products={this.state.products.length ? this.state.products : []}
+              foods={this.state.foods}
+            />
           </div>
         </div>
       </div>

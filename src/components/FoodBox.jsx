@@ -29,13 +29,13 @@ export class FoodBox extends Component {
               <div className="control">
                 <input
                   id={this.props.food._id}
-                  className="input"
+                  className="form-control"
                   type="number"
                   name="quantity"
-                  min="1"
+                  min="0"
                   onChange={this.handleChange}
                 />
-                <button onClick={this.handleSubmit}>update qty</button>
+                <button onClick={this.handleSubmit}>Add to cart</button>
               </div>
             </div>
           </div>

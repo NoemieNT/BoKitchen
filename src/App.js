@@ -16,11 +16,8 @@ import AdminDashboard from "./views/AdminDashboard";
 // import component (view partials)
 import NavMain from "./components/NavMain";
 import Account from "./components/Account";
-import CreateFood from "./components/CreateFood";
-import GeneralTable from "./components/GeneralTable";
-import ProductsTable from "./components/ProductsTable";
 import SearchBar from "./components/SearchBar";
-import Cart from "./components/Cart";
+
 function App() {
   return (
     <React.Fragment>
@@ -31,7 +28,6 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/cart" component={Cart} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/menu" component={Menu} />
           <Route path="/myaccount" component={MyAccount} />

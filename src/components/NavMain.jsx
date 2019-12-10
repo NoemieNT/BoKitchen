@@ -14,7 +14,7 @@ export default function NavMain() {
           </li>
           <li className="nav-item">
             <NavLink to="/menu"> Menu </NavLink>
-            <NavLink to="/cart"> Cart </NavLink>
+            <NavLink to="/cheackout"> Checkout </NavLink>
             <NavLink to="/myaccount"> My Account</NavLink>
             <NavLink to="/SignIn"> Sign In </NavLink>
           </li>
