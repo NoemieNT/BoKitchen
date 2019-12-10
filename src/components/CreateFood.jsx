@@ -2,19 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class CreateFood extends Component {
-  // state = {
-  //   infos: {
-  //     picture: "",
-  //     name: "",
-  //     description: "",
-  //     category: "",
-  //     tags: [],
-  //     price: 0,
-  //     Stock: 0,
-  //     menu: false
-  //   }
-  // };
-
   state = { infos: { menu: false }, tags: [], newTag: {} };
 
   componentDidMount() {
