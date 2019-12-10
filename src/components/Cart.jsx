@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export class Cart extends Component {
   render() {
@@ -9,7 +10,8 @@ export class Cart extends Component {
         {Boolean(this.props.products.length) &&
           this.props.products.map((p, i) => (
             <p key={i}>
-              {p.id} : {p.quantity}
+              {p.quantity} {this.props.foods[p.index].name} :{" "}
+              {this.props.foods[p.index].price}$
             </p>
           ))}
         <form onSubmit={this.handleFormSubmit}>

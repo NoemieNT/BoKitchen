@@ -3,10 +3,7 @@ import FoodBox from "./FoodBox";
 
 const ProductsTable = props => {
   const handleQuantityChange = (i, input) => {
-    props.productSelectionClbk({
-      id: i,
-      input
-    });
+    props.productSelectionClbk({ i, input });
   };
 
   return (

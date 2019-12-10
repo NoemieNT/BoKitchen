@@ -18,7 +18,7 @@ export class FoodBox extends Component {
         <div className="card mb-4 shadow-sm">
           <div className="card">
             <img
-              src={this.props.food.image}
+              src={this.props.food.picture}
               className="card-img-top"
               alt={this.props.food.name}
             />
@@ -28,7 +28,7 @@ export class FoodBox extends Component {
               <p className="card-text">{this.props.food.price}$</p>
               <div className="control">
                 <input
-                  id={this.props.food.name}
+                  id={this.props.food._id}
                   className="input"
                   type="number"
                   name="quantity"
