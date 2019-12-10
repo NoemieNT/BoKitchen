@@ -9,7 +9,7 @@ export class Cart extends Component {
         {Boolean(this.props.products.length) &&
           this.props.products.map((p, i) => (
             <p key={i}>
-              {p.name} - {p.quantity}
+              {p.id} : {p.quantity}
             </p>
           ))}
       </div>
