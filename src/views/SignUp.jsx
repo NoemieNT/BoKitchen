@@ -1,58 +1,113 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-export class SignUp extends Component {
+import APIHandler from "./../api/handler";
+
+export default class SignUp extends Component {
+  state = {
+    firstname: "toto",
+    lastname: "yoyo",
+    username: "yeye",
+    email: "yeye@yaya.yoyo",
+    password: "12345"
+  };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      await APIHandler.post("/signup", this.state);
+      this.props.history.push("/signin");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  handleChange = e => {
+    console.log(e.target);
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
+    const { email, password, username, firstname, lastname } = this.state;
     return (
-      <div className="auth-container">
-        <form>
-          <h3 className="text-center">Sign Up</h3>
+      <React.Fragment>
+        <div className="auth-container">
+          <form
+            className="form"
+            onSubmit={this.handleSubmit}
+            onChange={this.handleChange}
+          >
+            <h3 className="text-center">Sign Up</h3>
 
-          <div className="form-group">
-            <label>First name</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="First name"
-            />
-          </div>
+            <div className="form-group">
+              <label className="label" htmlFor="firstName">
+                First name
+              </label>
+              <input
+                className="form-control"
+                id="firstname"
+                type="text"
+                name="firstname"
+                placeholder="First name"
+                defaultValue={firstname}
+              />
+            </div>
+            <div className="form-group">
+              <label className="label" htmlFor="lastname"></label>
+              <input
+                className="form-control"
+                id="lastname"
+                type="text"
+                name="lastname"
+                placeholder="Last name"
+                defaultValue={lastname}
+              />
+            </div>
+            <div className="form-group">
+              <label className="label" htmlFor="username"></label>
+              <input
+                className="form-control"
+                id="username"
+                type="text"
+                placeholder="User Name"
+                name="username"
+                defaultValue={username}
+              />
+            </div>
+            <div className="form-group">
+              <label className="label" htmlFor="email"></label>
+              <input
+                className="form-control"
+                id="email"
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                defaultValue={email}
+              />
+            </div>
+            <div className="form-group">
+              <label className="label" htmlFor="password">
+                password
+              </label>
+              <input
+                className="form-control"
+                id="password"
+                type="password"
+                placeholder="Enter password"
+                name="password"
+                defaultValue={password}
+              />
+            </div>
 
-          <div className="form-group">
-            <label>Last name</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Last name"
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Enter email"
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-            />
-          </div>
-
-          <button type="submit" className="btn btn-primary btn-block">
-            Sign Up
-          </button>
-          <p className="forgot-password text-right">
-            Already registered <a href="/signIn">sign in?</a>
-          </p>
-        </form>
-      </div>
+            <button type="submit" className="btn btn-primary btn-block">
+              Sign Up
+            </button>
+            <p className="forgot-password text-right">
+              Already registered <a href="/signIn">sign in?</a>
+            </p>
+          </form>
+        </div>
+      </React.Fragment>
     );
   }
 }
-
-export default SignUp;

@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const url = process.env.REACT_APP_BACKEND_URL;
+// const url = process.env.REACT_APP_BACKEND_URL;
 
-export default class APIHandler {
+class APIHandler {
   constructor() {
     this.instance = axios.create({
-      baseURL: url
+      baseURL: process.env.REACT_APP_BACKEND_URL
     });
   }
 
@@ -17,3 +17,5 @@ export default class APIHandler {
     return this.instance.post(url, data);
   }
 }
+
+export default new APIHandler();
