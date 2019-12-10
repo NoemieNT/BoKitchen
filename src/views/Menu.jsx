@@ -8,34 +8,35 @@ export class Menu extends Component {
   //props dans cart (i et qty)
   state = {
     products: [],
-    foods: [exampleFood]
+    foods: [...exampleFood]
   };
 
-  handleSelectedProducts = selectedProducts => {
-    console.log("finally !!!", selectedProducts);
-    this.setState({ products: selectedProducts });
+  handleSelectedProducts = selectedProduct => {
+    console.log("finally !!!", selectedProduct);
+    const copy = [...this.state.products];
+    copy.push({ id: selectedProduct.id, qty: selectedProduct.input.quantity });
+    this.setState({ products: copy }, () => {
+      console.log(this.state.products);
+    });
   };
 
   //FILTERS
 
   render() {
     return (
-      <div>
-        <ProductsTable
-          productSelectionClbk={this.handleSelectedProducts}
-          foods={this.state.foods}
-        />
-        <Cart products={this.state.products} />
-        <FilterableProductsTable />
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12">
-              <form onSubmit={this.handleFormSubmit}>
-                <button className="btn btn-default" type="submit">
-                  Save
-                </button>
-              </form>
-            </div>
+      <div class="container">
+        <div className="row">
+          <div className="col-md-2 order-md-1 d-none d-md-block bg-light sidebar">
+            <FilterableProductsTable />
+          </div>
+          <div className="col-md-8 order-md-2">
+            <ProductsTable
+              productSelectionClbk={this.handleSelectedProducts}
+              foods={this.state.foods}
+            />
+          </div>
+          <div className="col-md-2 order-md-3">
+            <Cart products={this.state.products} />
           </div>
         </div>
       </div>

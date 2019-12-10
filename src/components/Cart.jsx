@@ -12,6 +12,11 @@ export class Cart extends Component {
               {p.id} : {p.quantity}
             </p>
           ))}
+        <form onSubmit={this.handleFormSubmit}>
+          <button className="btn btn-default" type="submit">
+            Save
+          </button>
+        </form>
       </div>
     );
   }

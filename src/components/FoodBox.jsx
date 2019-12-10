@@ -14,36 +14,32 @@ export class FoodBox extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.food.map((food, i) => (
-          <div className="col-md-4">
-            <div className="card mb-4 shadow-sm">
-              <div className="card" key={i}>
-                <img
-                  src={food.image}
-                  className="card-img-top"
-                  alt={food.name}
+      <div className="col-md-4">
+        <div className="card mb-4 shadow-sm">
+          <div className="card">
+            <img
+              src={this.props.food.image}
+              className="card-img-top"
+              alt={this.props.food.name}
+            />
+            <div className="card-body">
+              <h5 className="card-title">{this.props.food.name}</h5>
+              <p className="card-text">{this.props.food.description}</p>
+              <p className="card-text">{this.props.food.price}$</p>
+              <div className="control">
+                <input
+                  id={this.props.food.name}
+                  className="input"
+                  type="number"
+                  name="quantity"
+                  min="1"
+                  onChange={this.handleChange}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">{food.name}</h5>
-                  <p className="card-text">{food.description}</p>
-                  <p className="card-text">{food.price}$</p>
-                  <div className="control">
-                    <input
-                      id={food.name}
-                      className="input"
-                      type="number"
-                      name="quantity"
-                      min="1"
-                      onChange={this.handleChange}
-                    />
-                    <button onClick={this.handleSubmit}>update qty</button>
-                  </div>
-                </div>
+                <button onClick={this.handleSubmit}>update qty</button>
               </div>
             </div>
           </div>
-        ))}
+        </div>
       </div>
     );
   }

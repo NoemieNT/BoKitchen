@@ -60,7 +60,6 @@ export default class CreateFood extends Component {
   };
 
   render() {
-    console.log(this.state.tags);
     return (
       <div className="row">
         <div className="col-md-8 order-md-2">
