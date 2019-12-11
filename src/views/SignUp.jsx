@@ -5,10 +5,10 @@ import APIHandler from "./../api/handler";
 
 export default class SignUp extends Component {
   state = {
-    firstname: "toto",
-    lastname: "yoyo",
-    username: "yeye",
-    email: "yeye@yaya.yoyo",
+    firstname: "Hanna",
+    lastname: "M",
+    username: "HannaM",
+    email: "hanna@m.you",
     password: "12345"
   };
 
