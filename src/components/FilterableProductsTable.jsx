@@ -74,7 +74,7 @@ export class FilterableProductsTable extends Component {
         <div className="input-group d-flex flex-sm-column">
           <h5>Tags</h5>
           {this.state.allTags.map((tag, i) => (
-            <div className="form-check">
+            <div className="form-check" key={i}>
               <input
                 className="form-check-input"
                 type="checkbox"

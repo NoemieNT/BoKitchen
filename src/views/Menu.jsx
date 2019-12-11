@@ -98,7 +98,7 @@ export class Menu extends Component {
 
   render() {
     return (
-      <div class="container">
+      <div className="container">
         <div className="row">
           <div className="col-md-2 order-md-1 d-none d-md-block bg-light sidebar">
             <FilterableProductsTable productFilter={this.setFilterProduct} />
