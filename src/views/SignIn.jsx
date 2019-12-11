@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import UserContext from "./../auth/UserContext";
+import APIHandler from "./../api/handler";
 
 export default class Login extends Component {
   render() {

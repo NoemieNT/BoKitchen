@@ -18,7 +18,23 @@ import NavMain from "./components/NavMain";
 import Account from "./components/Account";
 import SearchBar from "./components/SearchBar";
 
-function App() {
+// auth
+import { useAuth } from "./auth/useAuth";
+import UserContext from "./auth/UserContext";
+import { ProtectedRoute } from "./auth/ProtectedRoute";
+
+const App = function App(props) {
+  const { isLoading } = useAuth();
+  const [navMobileStatus, setNavMobileStatus] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+  const [currentUser, setCurrentUser] = useState({});
+
+  // MANDATORY TO GET/SET currentUser according to server response
+  // check src/auth/UserContext
+  const UserContextValue = {
+    currentUser,
+    setCurrentUser
+  };
   return (
     <React.Fragment>
       <header id="header-main">
@@ -41,6 +57,6 @@ function App() {
       </div>
     </React.Fragment>
   );
-}
+};
 
 export default App;
