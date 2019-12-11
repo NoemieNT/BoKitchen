@@ -1,4 +1,5 @@
 import React from "react";
+import FormatHeure from "./../components/FormatHeure";
 
 export default function AdminOrdersTable({ orders }) {
   return (
@@ -10,7 +11,7 @@ export default function AdminOrdersTable({ orders }) {
             <th scope="col">Order</th>
             <th scope="col">Address</th>
             <th scope="col">Zipcode</th>
-            <th scope="col">Heure limite de livraison</th>
+            {/* <th scope="col">Heure limite de livraison</th> */}
             {/* total price */}
           </tr>
         </thead>
@@ -23,10 +24,12 @@ export default function AdminOrdersTable({ orders }) {
             orders.map((orders, i) => (
               <tr key={i}>
                 <td>{orders.status}</td>
-                <td>{orders._id}</td>
+                <td>{orders._id.slice(0, 7)}</td>
                 <td>{orders.address}</td>
                 <td>{orders.zipcode}</td>
-                <td>{orders.date}</td>
+                {/* <td>
+                  <FormatHeure date={orders.date} />
+                </td> */}
               </tr>
             ))
           )}

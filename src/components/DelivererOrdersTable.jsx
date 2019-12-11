@@ -1,4 +1,5 @@
 import React from "react";
+import FormatHeure from "./../components/FormatHeure";
 
 export default function DelivererOrdersTable({ validatedOrders, handleClick }) {
   return (
@@ -22,17 +23,20 @@ export default function DelivererOrdersTable({ validatedOrders, handleClick }) {
             validatedOrders.map((validatedOrders, i) => (
               <tr key={i}>
                 <th scope="row">
-                  <a id="deliveryChoice"
+                  <a
+                    id="deliveryChoice"
                     href="/indelivery"
                     onClick={evt => handleClick(validatedOrders._id)}
                   >
                     Take this one
                   </a>
                 </th>
-                <td>{validatedOrders._id}</td>
+                <td>{validatedOrders._id.slice(0, 7)}</td>
                 <td>{validatedOrders.address}</td>
                 <td>{validatedOrders.zipcode}</td>
-                <td>{validatedOrders.date}</td>
+                <td>
+                  <FormatHeure date={validatedOrders.date} />
+                </td>
               </tr>
             ))
           )}

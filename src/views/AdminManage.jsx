@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AdminProductsTable from "../components/AdminProductsTable";
 import AdminSidebar from "../components/AdminSidebar";
-import exampleFood from "../data/exampleFood.json";
+import SearchBar from "../components/SearchBar";
 
 const AdminManage = props => {
   const [foods, setFoods] = useState([]);
+  const [currentFood, setcurrentFood] = useState([]);
 
   useEffect(() => {
     axios
@@ -20,9 +21,7 @@ const AdminManage = props => {
 
   const deleteFood = input => {
     axios
-      .delete(process.env.REACT_APP_BACKEND_URL + "/delete-food/" + input, {
-        new: true
-      })
+      .delete(process.env.REACT_APP_BACKEND_URL + "/delete-food/" + input)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
@@ -34,13 +33,23 @@ const AdminManage = props => {
       .catch(err => console.log(err));
   };
 
+  const handleSearch = input => {
+    console.log(input);
+    console.log(currentFood);
+    let filtered = foods.filter(f =>
+      f.name.toLowerCase().includes(input.toLowerCase())
+    );
+    setcurrentFood(filtered);
+  };
+
   return (
     <div class="container">
       <div className="row">
         <AdminSidebar />
         <div className="col-md-8 order-md-2">
+          <SearchBar clbk={handleSearch} />
           <AdminProductsTable
-            foods={foods}
+            foods={currentFood.length ? currentFood : foods}
             handleDelete={deleteFood}
             handleEdit={editFood}
           />

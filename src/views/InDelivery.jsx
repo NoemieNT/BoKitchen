@@ -8,6 +8,7 @@ const InDelivery = props => {
     axios
       .get(process.env.REACT_APP_BACKEND_URL + "/all-orders")
       .then(res => {
+        console.log("res details", res);
         setOrder(res.data.filter(o => o.status === "IN DELIVERY"));
       })
       .catch(err => {

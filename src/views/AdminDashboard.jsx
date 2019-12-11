@@ -31,7 +31,6 @@ const AdminDashboard = props => {
     }
   };
 
-  
   const filterOrders = orders => {
     if (zipCodes.length === 0 && status.length === 0) {
       return orders;

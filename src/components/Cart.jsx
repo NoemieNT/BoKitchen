@@ -54,13 +54,20 @@ export class Cart extends Component {
                     {this.props.products.map((p, i) => (
                       <tr key={i}>
                         <td>{p.quantity}</td>
-                        <td>{this.props.foods[p.index].name}</td>
                         <td>
-                          {this.props.foods[p.index].price}
+                          {this.props.foods.filter(f => f._id === p.id)[0].name}
+                        </td>
+                        <td>
+                          {
+                            this.props.foods.filter(f => f._id === p.id)[0]
+                              .price
+                          }
+
                           <span>$</span>
                         </td>
                         <td>
-                          {this.props.foods[p.index].price * p.quantity}
+                          {this.props.foods.filter(f => f._id === p.id)[0]
+                            .price * p.quantity}
                           <span>$</span>
                         </td>
                       </tr>
@@ -68,7 +75,12 @@ export class Cart extends Component {
                     <td className="table-active" colSpan="4">
                       Total :
                       {[...this.props.products]
-                        .map(p => p.quantity * this.props.foods[p.index].price)
+                        .map(
+                          p =>
+                            p.quantity *
+                            this.props.foods.filter(f => f._id === p.id)[0]
+                              .price
+                        )
                         .reduce((prev, next) => prev + next)}
                       $
                     </td>
