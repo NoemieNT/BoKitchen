@@ -44,6 +44,8 @@ const App = function App(props) {
           <Route path="/admin-dashboard" component={AdminDashboard} />
           <Route path="/admin-manage" component={AdminManage} />
           <Route path="/admin-create" component={AdminCreate} />
+          <ProtectedRoute exact path="/" />
+          {/* //my account user// dashboard delivery // admin  */}
         </Switch>
       </div>
     </React.Fragment>
