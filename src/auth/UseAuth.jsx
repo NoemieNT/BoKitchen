@@ -13,7 +13,7 @@ export const useAuth = () => {
       .then(res => {
         setIsLoggedIn(true);
         setIsLoading(false);
-        setCurrentUser(res.data.currentUser);
+        setCurrentUser(res.data);
       })
       .catch(err => {
         setCurrentUser(null);

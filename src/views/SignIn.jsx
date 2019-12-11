@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import UserContext from "./../auth/UserContext";
 import APIHandler from "./../api/handler";
 
 export default function Signin(props) {
   const [formValues, setFormValues] = useState({
-    email: "",
+    email: "noha@you.com",
     password: "12345"
   });
+
+  const userContext = useContext(UserContext);
+  const { setCurrentUser } = userContext;
+
   const handleFormValues = e => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
@@ -15,7 +19,9 @@ export default function Signin(props) {
     // try {
     APIHandler.post("/signin", formValues)
       .then(res => {
-        props.history.push("/");
+        console.log(res);
+        setCurrentUser(res.data);
+        props.history.push("/myaccount");
       })
       .catch(err => console.log(err));
 
@@ -40,6 +46,7 @@ export default function Signin(props) {
             type="email"
             className="form-control"
             placeholder="Enter email"
+            defaultValue={formValues.email}
           />
         </div>
 
@@ -50,6 +57,7 @@ export default function Signin(props) {
             type="password"
             className="form-control"
             placeholder="Enter password"
+            defaultValue={formValues.password}
           />
         </div>
 

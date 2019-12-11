@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { useAuth } from "./../auth/UseAuth";
 
-export class MyAccount extends Component {
-  render() {
-    return <div></div>;
-  }
+function MyAccount() {
+  const { currentUser, isLoading } = useAuth();
+
+  if (isLoading) return null;
+
+  return <div>my account: hello {currentUser.firstname}</div>;
 }
 
 export default MyAccount;

@@ -47,3 +47,12 @@ code {
 area {
   outline: 7px solid darkblue;
 }
+
+.carousel-item {
+  height: 600px;
+  width: 400px;
+}
+
+.carousel-slide {
+  border: 1px solid;
+}
