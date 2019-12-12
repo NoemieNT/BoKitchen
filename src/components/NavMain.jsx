@@ -3,23 +3,39 @@ import { NavLink } from "react-router-dom";
 
 export default function NavMain() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="navbar-collapse" id="navbarTogglerDemo02">
+    <div className="navBar">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <ul className="navbar-nav mr-auto mt-2 mt-md-0">
           <li className="nav-item active">
-            <NavLink exact to="/">
+            <NavLink className="items" exact to="/">
               {" "}
-              Home{" "}
+              <img
+                className="burgerIcon"
+                src="https://freeiconshop.com/wp-content/uploads/edd/burger-flat.png"
+                alt="burger"
+              />{" "}
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/menu"> Menu </NavLink>
-            <NavLink to="/cheackout"> Checkout </NavLink>
-            <NavLink to="/myaccount"> My Account</NavLink>
-            <NavLink to="/SignIn"> Sign In </NavLink>
+            <NavLink className="items" to="/menu">
+              {" "}
+              Menu{" "}
+            </NavLink>
+            <NavLink className="items" to="/cheackout">
+              {" "}
+              Checkout{" "}
+            </NavLink>
+            <NavLink className="items" to="/myaccount">
+              {" "}
+              My Account
+            </NavLink>
+            <NavLink className="items" to="/SignIn">
+              {" "}
+              Sign In{" "}
+            </NavLink>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
