@@ -114,9 +114,9 @@ code {
   color: white
 }
 
-area {
-  outline: 7px solid darkblue;
-}
+/* area {
+  outline: 3px solid rgb(21, 89, 156);
+} */
 
 .carousel {
   display: flex;
@@ -172,6 +172,7 @@ area {
   justify-content: left;
 }
 
+<<<<<<< HEAD
 /* =======>SIGNIN<========== */
 
 #auth-container-signin {
@@ -199,4 +200,16 @@ area {
 .forgot-password {
   padding: 5px;
   font-size: 20px;
+=======
+#btn-delivered {
+  margin: 5% 25%
+}
+
+.btn {
+  margin: 5px;
+}
+
+#admin-dashboard {
+  margin: 5% 25%;
+>>>>>>> e4fa50f877e603c38d06c4aa06052c0622270761
 }

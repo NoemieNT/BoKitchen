@@ -55,7 +55,7 @@ export default class OrderCard extends Component {
               <a
                 href="/dashboard"
                 onClick={evt => this.props.handleClick(order._id)}
-                className="btn btn-primary"
+                className="btn btn-primary" id="btn-delivered"
               >
                 Delivered
               </a>

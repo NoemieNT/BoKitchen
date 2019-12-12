@@ -3,14 +3,14 @@ import FormatHeure from "./../components/FormatHeure";
 
 export default function DelivererOrdersTable({ validatedOrders, handleClick }) {
   return (
-    <div>
+    <div className="table-responsive-sm">
       <table className="table table-striped table-responsive{-sm|-md|-lg|-xl}">
         <thead>
           <tr>
             <th scope="col"></th>
             <th scope="col">Order</th>
             <th scope="col">Address</th>
-            <th scope="col">Zipcode</th>
+            {/* <th scope="col">Zipcode</th> */}
             <th scope="col">Heure limite de livraison</th>
           </tr>
         </thead>
@@ -28,12 +28,14 @@ export default function DelivererOrdersTable({ validatedOrders, handleClick }) {
                     href="/indelivery"
                     onClick={evt => handleClick(validatedOrders._id)}
                   >
-                    Take this one
+                    Take this order
                   </a>
                 </th>
                 <td>{validatedOrders._id.slice(0, 7)}</td>
-                <td>{validatedOrders.address}</td>
-                <td>{validatedOrders.zipcode}</td>
+                <td>
+                  {validatedOrders.address} {validatedOrders.zipcode}
+                </td>
+                {/* <td>{validatedOrders.zipcode}</td> */}
                 <td>
                   <FormatHeure date={validatedOrders.date} />
                 </td>

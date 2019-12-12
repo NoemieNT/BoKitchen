@@ -15,6 +15,7 @@ export class MapWrap extends Component {
           src="http://img.over-blog.com/300x300/2/75/42/24/2010/Animateurs/carteParis.png"
           useMap="#image-map"
           alt="paris-map"
+          id="paris-map"
         />
         <map name="image-map" onClick={this.clickArea}>
           <area
