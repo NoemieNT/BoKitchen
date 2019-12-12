@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
+import APIHandler from "./../api/handler";
 
 export class FilterableProductsTable extends Component {
   state = { allTags: [], category: [], tags: [] };
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_BACKEND_URL + "/all-tags")
+    APIHandler.get("/all-tags")
       .then(res => {
         this.setState({ allTags: res.data });
       })

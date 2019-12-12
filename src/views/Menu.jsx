@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ProductsTable from "../components/ProductsTable";
 import Cart from "../components/Cart";
 import FilterableProductsTable from "../components/FilterableProductsTable";
-import axios from "axios";
+import APIHandler from "./../api/handler";
 
 export class Menu extends Component {
   state = {
@@ -14,8 +14,7 @@ export class Menu extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_BACKEND_URL + "/foods")
+    APIHandler.get("/foods")
       .then(res => {
         this.setState({ foods: res.data });
       })
@@ -78,7 +77,9 @@ export class Menu extends Component {
 
           if (!isAlreadyInFiltered) {
             copy.push(f);
-            this.setState({ filteredFoods: copy });
+            this.setState({ filteredFoods: copy }, () => {
+              console.log("filtered ?", this.state.filteredFoods);
+            });
           }
         } else {
           const copy = [...this.state.filteredFoods];
@@ -86,7 +87,9 @@ export class Menu extends Component {
           if (needle) {
             const index = copy.indexOf(needle);
             copy.splice(index, 1);
-            this.setState({ filteredFoods: copy });
+            this.setState({ filteredFoods: copy }, () => {
+              console.log("filtered ?", this.state.filteredFoods);
+            });
           }
         }
       });

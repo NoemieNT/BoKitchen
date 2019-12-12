@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
+import APIHandler from "./../api/handler";
 
 export default class CreateFood extends Component {
   state = { infos: { menu: false }, tags: [], newTag: {} };
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_BACKEND_URL + "/all-tags")
+    APIHandler.get("/all-tags")
       .then(res => {
         this.setState({ tags: res.data });
       })
@@ -22,11 +21,7 @@ export default class CreateFood extends Component {
   };
 
   createTag = e => {
-    axios
-      .post(
-        process.env.REACT_APP_BACKEND_URL + "/create-tag",
-        this.state.newTag
-      )
+    APIHandler.post("/create-tag", this.state.newTag)
       .then(res => {
         console.log(res);
         this.setState({ tags: [...this.state.tags, res.data] });

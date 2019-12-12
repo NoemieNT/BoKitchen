@@ -1,7 +1,24 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink, withRouter } from "react-router-dom";
+import APIHandler from "./../api/handler";
+import UserContext from "./../auth/UserContext";
 
-export default function NavMain() {
+export default withRouter(function NavMain(props) {
+  const userContext = useContext(UserContext);
+  const { setCurrentUser } = userContext;
+
+  // go go go
+  const handleSignout = async () => {
+    try {
+      const x = await APIHandler.get("/logout");
+      setCurrentUser(null);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      props.history.push("/signin");
+    }
+  };
+
   return (
     <div className="navBar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,9 +50,10 @@ export default function NavMain() {
               {" "}
               Sign In{" "}
             </NavLink>
+            <span onClick={handleSignout}>signout</span>
           </li>
         </ul>
       </nav>
     </div>
   );
-}
+});

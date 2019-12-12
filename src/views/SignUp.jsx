@@ -7,7 +7,6 @@ export default class SignUp extends Component {
   state = {
     firstname: "Hanna",
     lastname: "M",
-    username: "HannaM",
     email: "hanna@m.you",
     password: "12345"
   };
@@ -28,7 +27,7 @@ export default class SignUp extends Component {
   };
 
   render() {
-    const { email, password, username, firstname, lastname } = this.state;
+    const { email, password, firstname, lastname } = this.state;
     return (
       <React.Fragment>
         <div className="auth-container">
@@ -53,7 +52,9 @@ export default class SignUp extends Component {
               />
             </div>
             <div className="form-group">
-              <label className="label" htmlFor="lastname">Lastname</label>
+              <label className="label" htmlFor="lastname">
+                Lastname
+              </label>
               <input
                 className="form-control"
                 id="lastname"
@@ -64,7 +65,9 @@ export default class SignUp extends Component {
               />
             </div>
             <div className="form-group">
-              <label className="label" htmlFor="email">Email</label>
+              <label className="label" htmlFor="email">
+                Email
+              </label>
               <input
                 className="form-control"
                 id="email"

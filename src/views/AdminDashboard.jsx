@@ -3,16 +3,18 @@ import AdminSidebar from "../components/AdminSidebar";
 import MapWrap from "../components/MapWrap";
 import AdminOrdersTable from "../components/AdminOrdersTable";
 import Checkboxes from "../components/Checkboxes";
-import axios from "axios";
+import APIHandler from "./../api/handler";
+import { Redirect } from "react-router-dom";
+import { useAuth } from "./../auth/UseAuth";
 
 const AdminDashboard = props => {
+  const { currentUser } = useAuth();
   const [orders, setOrders] = useState([]);
   const [zipCodes, setZipcodes] = useState([]);
   const [status, setStatus] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_BACKEND_URL + "/all-orders")
+    APIHandler.get("/all-orders")
       .then(res => {
         setOrders(res.data);
       })
@@ -46,7 +48,9 @@ const AdminDashboard = props => {
     }
   };
 
-  return (
+  if (!currentUser) return null;
+
+  return currentUser.role === "ADMIN" ? (
     <div className="container">
       <div className="row">
         <AdminSidebar />
@@ -58,6 +62,8 @@ const AdminDashboard = props => {
         </div>
       </div>
     </div>
+  ) : (
+    <Redirect to="/dashboard" />
   );
 };
 
