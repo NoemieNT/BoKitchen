@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function NavMain() {
   return (
     <div className="navBar">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg">
         <ul className="navbar-nav mr-auto mt-2 mt-md-0">
           <li className="nav-item active">
             <NavLink className="items" exact to="/">
