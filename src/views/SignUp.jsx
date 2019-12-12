@@ -53,7 +53,7 @@ export default class SignUp extends Component {
               />
             </div>
             <div className="form-group">
-              <label className="label" htmlFor="lastname"></label>
+              <label className="label" htmlFor="lastname">Lastname</label>
               <input
                 className="form-control"
                 id="lastname"
@@ -64,18 +64,7 @@ export default class SignUp extends Component {
               />
             </div>
             <div className="form-group">
-              <label className="label" htmlFor="username"></label>
-              <input
-                className="form-control"
-                id="username"
-                type="text"
-                placeholder="User Name"
-                name="username"
-                defaultValue={username}
-              />
-            </div>
-            <div className="form-group">
-              <label className="label" htmlFor="email"></label>
+              <label className="label" htmlFor="email">Email</label>
               <input
                 className="form-control"
                 id="email"
@@ -87,7 +76,7 @@ export default class SignUp extends Component {
             </div>
             <div className="form-group">
               <label className="label" htmlFor="password">
-                password
+                Password
               </label>
               <input
                 className="form-control"

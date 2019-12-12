@@ -46,15 +46,18 @@ const App = function App(props) {
           <div className="App">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/dashboard" component={Dashboard} />
+              <ProtectedRoute path="/dashboard" component={Dashboard} />
               <Route path="/menu" component={Menu} />
               <ProtectedRoute path="/myaccount" component={MyAccount} />
               <Route path="/signIn" component={SignIn} />
               <Route path="/signUp" component={SignUp} />
-              <Route path="/indelivery" component={inDelivery} />
-              <Route path="/admin-dashboard" component={AdminDashboard} />
-              <Route path="/admin-manage" component={AdminManage} />
-              <Route path="/admin-create" component={AdminCreate} />
+              <ProtectedRoute path="/indelivery" component={inDelivery} />
+              <ProtectedRoute
+                path="/admin-dashboard"
+                component={AdminDashboard}
+              />
+              <ProtectedRoute path="/admin-manage" component={AdminManage} />
+              <ProtectedRoute path="/admin-create" component={AdminCreate} />
               {/* //my account user// dashboard delivery // admin  */}
             </Switch>
           </div>

@@ -22,7 +22,12 @@ const AdminManage = props => {
   const deleteFood = input => {
     axios
       .delete(process.env.REACT_APP_BACKEND_URL + "/delete-food/" + input)
-      .then(res => console.log(res))
+      .then(res => {
+        {
+          console.log(res);
+          setFoods(foods.filter(f => f._id !== res.data._id));
+        }
+      })
       .catch(err => console.log(err));
   };
 
@@ -43,7 +48,7 @@ const AdminManage = props => {
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <div className="row">
         <AdminSidebar />
         <div className="col-md-8 order-md-2">

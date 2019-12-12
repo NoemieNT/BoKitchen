@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "./../auth/UseAuth";
 
 export class Cart extends Component {
-  state = { infos: {} };
+  state = { infos: {}};
+  // const { currentUser, isLoading } = useAuth();
+
+  // if (isLoading) return null;
+
 
   handleChange = e => {
     const copy = { ...this.state.infos };
@@ -10,6 +16,7 @@ export class Cart extends Component {
       quantity: p.quantity,
       food: p.id
     }));
+    // let copy["customer"] = currentUser._id
     copy["details"] = detail;
     if (e.target.name === "zipcode") {
       copy[e.target.name] = Number(e.target.value);
@@ -17,7 +24,6 @@ export class Cart extends Component {
       copy[e.target.name] = e.target.value;
     }
     this.setState({ infos: copy });
-    // console.log(this.state.infos);
   };
 
   createOrder = e => {
@@ -27,7 +33,10 @@ export class Cart extends Component {
         process.env.REACT_APP_BACKEND_URL + "/create-order",
         this.state.infos
       )
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        this.props.history.push("/indelivery");
+      })
       .catch(err => console.log(err));
   };
 
@@ -72,18 +81,24 @@ export class Cart extends Component {
                         </td>
                       </tr>
                     ))}
-                    <td className="table-active" colSpan="4">
-                      Total :
-                      {[...this.props.products]
-                        .map(
-                          p =>
-                            p.quantity *
-                            this.props.foods.filter(f => f._id === p.id)[0]
-                              .price
-                        )
-                        .reduce((prev, next) => prev + next)}
-                      $
-                    </td>
+                    <tr>
+                      <td className="table-active" colSpan="4">
+                        <div>
+                          Total : $
+                          {[...this.props.products]
+                            .map(
+                              p =>
+                                p.quantity *
+                                this.props.foods.filter(f => f._id === p.id)[0]
+                                  .price
+                            )
+                            .reduce((prev, next) => prev + next)}
+                        </div>
+                        <small className="text-muted">
+                          Delivery fees : $2.50
+                        </small>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -128,7 +143,7 @@ export class Cart extends Component {
               </div>
               <div>
                 <a
-                  href="/myaccount"
+                  href="#"
                   className="btn btn-primary"
                   role="button"
                   aria-pressed="true"
@@ -145,4 +160,4 @@ export class Cart extends Component {
   }
 }
 
-export default Cart;
+export default withRouter(Cart);

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import ProductsTable from "../components/ProductsTable";
 import Cart from "../components/Cart";
 import FilterableProductsTable from "../components/FilterableProductsTable";
-import exampleFood from "../data/exampleFood.json";
 import axios from "axios";
 
 export class Menu extends Component {
@@ -44,13 +43,13 @@ export class Menu extends Component {
       let existingLine = this.state.products.filter(
         element => element.id === selectedProduct.input.id
       );
+      console.log(existingLine);
       existingLine[0].quantity = selectedProduct.input.quantity;
       if (selectedProduct.input.quantity !== 0) {
         copy.push(existingLine[0]);
       }
-      copy.splice(existingLine[0].index, 1);
+      copy.splice(existingLine.indexOf(selectedProduct.i), 1);
       this.setState({ products: copy });
-      console.log(existingLine);
     }
   };
 
@@ -91,8 +90,6 @@ export class Menu extends Component {
           }
         }
       });
-
-      // on a ajouté les filres actuels...
     });
   };
 

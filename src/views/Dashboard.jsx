@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import MapWrap from "../components/MapWrap";
 import DelivererOrdersTable from "../components/DelivererOrdersTable";
 import axios from "axios";
+import { useAuth } from "./../auth/UseAuth";
 
 const Dashboard = props => {
   const [validatedOrders, setValidatedOrders] = useState([]);
   const [zipCodes, setZipcodes] = useState([]);
+  const { currentUser, isLoading } = useAuth();
 
   useEffect(() => {
     axios
@@ -41,9 +43,11 @@ const Dashboard = props => {
       .catch(err => console.log(err));
   };
 
+  if (isLoading) return null;
+
   return (
     <div className="container">
-      <h1 className="text-center">Welcome "USER.NAME"</h1>
+      <h1 className="text-center">Welcome {currentUser.firstname}</h1>
       <div className="row">
         <div className="col">
           <p className="text-center">Select your delivery zone</p>

@@ -3,6 +3,7 @@ import { useAuth } from "./../auth/UseAuth";
 
 function MyAccount() {
   const { currentUser, isLoading } = useAuth();
+  console.log(currentUser._id);
 
   if (isLoading) return null;
 

@@ -27,7 +27,10 @@ export default class CreateFood extends Component {
         process.env.REACT_APP_BACKEND_URL + "/create-tag",
         this.state.newTag
       )
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        this.setState({ tags: [...this.state.tags, res.data] });
+      })
       .catch(err => console.log(err));
   };
 

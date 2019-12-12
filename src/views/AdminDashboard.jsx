@@ -25,10 +25,11 @@ const AdminDashboard = props => {
     setZipcodes(arrondissements);
   };
 
-  const setStatusState = status => {
-    if (status.checked) {
-      setStatus(status.value);
-    }
+  const setStatusState = input => {
+    console.log(status);
+    if (input.checked) {
+      setStatus([...status, input.value]);
+    } else setStatus(status.filter(i => i !== input.value));
   };
 
   const filterOrders = orders => {
