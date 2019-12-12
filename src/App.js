@@ -12,6 +12,7 @@ import inDelivery from "./views/InDelivery";
 import AdminManage from "./views/AdminManage";
 import AdminCreate from "./views/AdminCreate";
 import AdminDashboard from "./views/AdminDashboard";
+import AdminAll from "./views/AdminAll";
 
 // import component (view partials)
 import NavMain from "./components/NavMain";
@@ -40,7 +41,6 @@ const App = function App(props) {
     <UserContext.Provider value={UserContextValue}>
       {isLoading ? null : (
         <React.Fragment>
-<<<<<<< HEAD
           <div class="container-fluid">
             <header id="header-main">
               <NavMain />
@@ -60,43 +60,20 @@ const App = function App(props) {
                 <Route path="/admin-manage" component={AdminManage} />
                 <Route path="/admin-create" component={AdminCreate} />
                 <Route path="*" component={NotFound} />
-                {/* <ProtectedRoute
+                <ProtectedRoute
                   exact
-                  path="/admin/:endpoint(AdminCreate|AdminDashboard||Ad:inManage)/:mode"
-                  component={AdminForms}
+                  path="/admin/:endpoint(AdminCreate|AdminDashboard|AdminManage)/:mode"
+                  component={AdminAll}
                 />
 
                 <ProtectedRoute
                   exact
-                  path="/admin/:endpoint(albums|artists|labels|styles)/:mode/:id"
-                  component={AdminForms}
-                /> */}
+                  path="/admin/:endpoint(AdminCreate|AdminDashboard|AdminManage)/:mode/:id"
+                  component={AdminAll}
+                />
                 {/* //my account user// dashboard delivery // admin  */}
               </Switch>
             </div>
-=======
-          <header id="header-main">
-            <NavMain />
-            {/* <SearchBar /> */}
-          </header>
-          <div className="App">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <ProtectedRoute path="/dashboard" component={Dashboard} />
-              <Route path="/menu" component={Menu} />
-              <ProtectedRoute path="/myaccount" component={MyAccount} />
-              <Route path="/signIn" component={SignIn} />
-              <Route path="/signUp" component={SignUp} />
-              <ProtectedRoute path="/indelivery" component={inDelivery} />
-              <ProtectedRoute
-                path="/admin-dashboard"
-                component={AdminDashboard}
-              />
-              <ProtectedRoute path="/admin-manage" component={AdminManage} />
-              <ProtectedRoute path="/admin-create" component={AdminCreate} />
-              {/* //my account user// dashboard delivery // admin  */}
-            </Switch>
->>>>>>> 190b65e288ad29bfc74206807864b61f19c35f88
           </div>
         </React.Fragment>
       )}

@@ -11,16 +11,10 @@ const forms = {
 
 export default function AdminForms(props) {
   const { endpoint, id: resourceId, mode } = props.match.params;
-  const ActiveForm = forms[endpoint];
 
-  return !ActiveForm ? null : (
+  return (
     <div>
-      <h1 className="title">
-        <IconBack size="xs" />
-        {mode === "edit" ? "Edit" : "New"} {endpoint}
-      </h1>
-      <hr />
-      <ActiveForm mode={mode} _id={resourceId} />
+      <h1 className="title">{endpoint}</h1>
     </div>
   );
 }
