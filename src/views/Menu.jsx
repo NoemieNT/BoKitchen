@@ -98,12 +98,15 @@ export class Menu extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-2 order-md-1 d-none d-md-block bg-light sidebar">
+      <div className="container-menu">
+        <div className="row-menu">
+          <div
+            id="filter-table"
+            className="filter-table col-md-2 order-md-1 d-none d-md-block sidebar"
+          >
             <FilterableProductsTable productFilter={this.setFilterProduct} />
           </div>
-          <div className="col-md-7 order-md-2">
+          <div id="filterable-product-table" className="col-md-7 order-md-2">
             <ProductsTable
               productSelectionClbk={this.handleSelectedProducts}
               foods={

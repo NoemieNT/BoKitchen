@@ -32,7 +32,7 @@ export default function Signin(props) {
   };
 
   return (
-    <div className="auth-container">
+    <div id="auth-container-signin" className="auth-container">
       <form
         className="form-signup"
         onChange={handleFormValues}
@@ -62,10 +62,14 @@ export default function Signin(props) {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary btn-block">
+        <button
+          id="btn-submit-signin"
+          type="submit"
+          className="btn btn-primary btn-block"
+        >
           Submit
         </button>
-        <p className="forgot-password text-right">
+        <p id="forgot-password" className="forgot-password text-right">
           Don't have an account yet <a href="/signUp">sign up ?</a>
         </p>
       </form>

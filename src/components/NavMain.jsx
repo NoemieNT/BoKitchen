@@ -26,10 +26,8 @@ export default withRouter(function NavMain(props) {
           <li className="nav-item active">
             <NavLink className="items" exact to="/">
               <div>
-                <a
-                  href="https://www.flaticon.com/authors/freepik"
-                  title="Freepik"
-                ></a>
+                {" "}
+                <img src="./lemon.png"></img>
               </div>
             </NavLink>
           </li>
@@ -42,15 +40,17 @@ export default withRouter(function NavMain(props) {
               {" "}
               Checkout{" "}
             </NavLink>
-            <NavLink className="items" to="/myaccount">
+            {/* <NavLink className="items" to="/myaccount">
               {" "}
               My Account
-            </NavLink>
-            <NavLink className="items" to="/SignIn">
+            </NavLink> */}
+            <NavLink className="item-sign" to="/SignIn">
               {" "}
               Sign In{" "}
             </NavLink>
-            <span onClick={handleSignout}>signout</span>
+            <span className="item-signout" onClick={handleSignout}>
+              signout
+            </span>
           </li>
         </ul>
       </nav>

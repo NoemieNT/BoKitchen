@@ -12,10 +12,7 @@ export class Home extends Component {
               </div>
             </div>
             <div class="carousel-item">
-              <img
-                src="https://cdn.bioalaune.com/img/article/thumb/900x500/35559-5-recettes-originales-hamburgers-bio-maison.webp"
-                alt="Chicago"
-              />
+              <img src="./../../public/vitamines.png" alt="lemons" />
             </div>
             <div class="carousel-item">
               <img
@@ -30,7 +27,7 @@ export class Home extends Component {
           <div class="col-sm-3">
             <img
               className="thumbnail-img"
-              src="./biologique.png"
+              src="./Yellow and Black Circles Photography Logo (1).png"
               alt="Salade thumbnail"
             />
           </div>
@@ -38,14 +35,14 @@ export class Home extends Component {
           <div class="col-sm-3">
             <img
               className="thumbnail-img"
-              src="./biologique.png"
+              src="./Yellow and Black Circles Photography Logo (2).png"
               alt="Pasta thumbnail"
             />
           </div>
           <div class="col-sm-3">
             <img
               className="thumbnail-img"
-              src="./biologique.png"
+              src="./Yellow and Black Circles Photography Logo.png"
               alt="Burger thumbnail"
             />
           </div>
