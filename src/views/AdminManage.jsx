@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import APIHandler from "./../api/handler";
 import AdminProductsTable from "../components/AdminProductsTable";
 import AdminSidebar from "../components/AdminSidebar";
 import SearchBar from "../components/SearchBar";
+import { useAuth } from "./../auth/UseAuth";
+import { Redirect } from "react-router-dom";
 
 const AdminManage = props => {
+  const { currentUser } = useAuth();
   const [foods, setFoods] = useState([]);
   const [currentFood, setcurrentFood] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_BACKEND_URL + "/foods")
+    APIHandler.get("/foods")
       .then(res => {
         setFoods(res.data);
       })
@@ -20,8 +22,7 @@ const AdminManage = props => {
   }, []);
 
   const deleteFood = input => {
-    axios
-      .delete(process.env.REACT_APP_BACKEND_URL + "/delete-food/" + input)
+    APIHandler.delete("/delete-food/" + input)
       .then(res => {
         {
           console.log(res);
@@ -32,8 +33,7 @@ const AdminManage = props => {
   };
 
   const editFood = (id, input) => {
-    axios
-      .patch(process.env.REACT_APP_BACKEND_URL + "/edit-food/" + id, input)
+    APIHandler.patch("/edit-food/" + id, input)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
@@ -47,7 +47,9 @@ const AdminManage = props => {
     setcurrentFood(filtered);
   };
 
-  return (
+  if (!currentUser) return null;
+
+  return currentUser.role === "ADMIN" ? (
     <div className="container">
       <div className="row">
         <AdminSidebar />
@@ -61,6 +63,8 @@ const AdminManage = props => {
         </div>
       </div>
     </div>
+  ) : (
+    <Redirect to="/dashboard" />
   );
 };
 export default AdminManage;

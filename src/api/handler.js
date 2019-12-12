@@ -1,5 +1,4 @@
 import axios from "axios";
-
 // const url = process.env.REACT_APP_BACKEND_URL;
 
 class APIHandler {
@@ -16,6 +15,14 @@ class APIHandler {
 
   post(url, data) {
     return this.instance.post(url, data);
+  }
+
+  delete(url) {
+    return this.instance.delete(url);
+  }
+
+  patch(url, data) {
+    return this.instance.patch(url, data);
   }
 }
 

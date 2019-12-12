@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import OrderCard from "../components/OrderCard";
-import axios from "axios";
+import APIHandler from "./../api/handler";
 import { useAuth } from "./../auth/UseAuth";
 
 const InDelivery = props => {
@@ -8,34 +8,24 @@ const InDelivery = props => {
   const [order, setOrder] = useState([]);
 
   useEffect(() => {
-    if (!isLoading)
-      axios
-        .get(
-          process.env.REACT_APP_BACKEND_URL +
-            "/customer-orders/" +
-            currentUser._id
-        )
-        .then(res => {
-          console.log("res details", res);
-          setOrder(res.data.filter(o => o.status === "IN DELIVERY"));
-        })
-        .catch(err => {
-          console.log(err);
-        });
-  }, []);
+    APIHandler.get("/current-order")
+      .then(res => {
+        console.log("res details", res, currentUser);
+        setOrder(res.data.filter(o => o.status !== "DELIVERED"));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [currentUser]);
 
   const updateOrder = input => {
     let updatedData = { status: "DELIVERED" };
-    axios
-      .patch(
-        process.env.REACT_APP_BACKEND_URL + "/edit-order/" + input,
-        updatedData
-      )
+    APIHandler.patch("/edit-order/" + input, updatedData)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
 
-  if (isLoading) return null;
+  if (isLoading || !order.length) return null;
 
   return (
     <div className="auth-container">

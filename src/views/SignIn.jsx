@@ -19,15 +19,16 @@ export default function Signin(props) {
     // try {
     APIHandler.post("/signin", formValues)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         setCurrentUser(res.data);
-        props.history.push("/myaccount");
+        const redirects = {
+          ADMIN: "/admin-dashboard",
+          DELIVERER: "/dashboard",
+          CUSTOMER: "/menu"
+        };
+        props.history.push(redirects[res.data.role]);
       })
       .catch(err => console.log(err));
-
-    // } catch (err) {
-    //   console.error(err);
-    // }
   };
 
   return (
