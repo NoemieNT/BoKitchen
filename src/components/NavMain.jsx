@@ -8,12 +8,12 @@ export default function NavMain() {
         <ul className="navbar-nav mr-auto mt-2 mt-md-0">
           <li className="nav-item active">
             <NavLink className="items" exact to="/">
-              {" "}
-              <img
-                className="burgerIcon"
-                src="https://freeiconshop.com/wp-content/uploads/edd/burger-flat.png"
-                alt="burger"
-              />{" "}
+              <div>
+                <a
+                  href="https://www.flaticon.com/authors/freepik"
+                  title="Freepik"
+                ></a>
+              </div>
             </NavLink>
           </li>
           <li className="nav-item">
