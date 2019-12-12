@@ -13,7 +13,7 @@ const AdminCreate = props => {
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <div className="row">
         <AdminSidebar />
         <CreateFood clbk={createFood} />

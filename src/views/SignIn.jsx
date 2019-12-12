@@ -61,20 +61,6 @@ export default function Signin(props) {
           />
         </div>
 
-        <div className="form-group">
-          <div className="custom-control custom-checkbox">
-            <input
-              name="deliverer"
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              I'm a deliverer
-            </label>
-          </div>
-        </div>
-
         <button type="submit" className="btn btn-primary btn-block">
           Submit
         </button>
