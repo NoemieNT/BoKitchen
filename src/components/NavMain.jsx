@@ -21,7 +21,7 @@ export default withRouter(function NavMain(props) {
 
   return (
     <div className="navBar">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg">
         <ul className="navbar-nav mr-auto mt-2 mt-md-0">
           <li className="nav-item active">
             <NavLink className="items" exact to="/">

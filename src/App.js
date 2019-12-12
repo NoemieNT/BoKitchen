@@ -12,6 +12,7 @@ import inDelivery from "./views/InDelivery";
 import AdminManage from "./views/AdminManage";
 import AdminCreate from "./views/AdminCreate";
 import AdminDashboard from "./views/AdminDashboard";
+import AdminAll from "./views/AdminAll";
 
 // import component (view partials)
 import NavMain from "./components/NavMain";
@@ -67,17 +68,17 @@ const App = function App(props) {
                 <ProtectedRoute path="/admin-manage" component={AdminManage} />
                 <ProtectedRoute path="/admin-create" component={AdminCreate} />
                 <Route path="*" component={NotFound} />
-                {/* <ProtectedRoute
+                <ProtectedRoute
                   exact
-                  path="/admin/:endpoint(AdminCreate|AdminDashboard||Ad:inManage)/:mode"
-                  component={AdminForms}
+                  path="/admin/:endpoint(AdminCreate|AdminDashboard|AdminManage)/:mode"
+                  component={AdminAll}
                 />
 
                 <ProtectedRoute
                   exact
-                  path="/admin/:endpoint(albums|artists|labels|styles)/:mode/:id"
-                  component={AdminForms}
-                /> */}
+                  path="/admin/:endpoint(AdminCreate|AdminDashboard|AdminManage)/:mode/:id"
+                  component={AdminAll}
+                />
                 {/* //my account user// dashboard delivery // admin  */}
               </Switch>
             </div>
