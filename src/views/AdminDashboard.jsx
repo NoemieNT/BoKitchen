@@ -56,8 +56,10 @@ const AdminDashboard = props => {
         <AdminSidebar />
         <div className="col-md-8 order-md-2">
           <h1 className="text-center">Dashboard</h1>
-          <MapWrap clbk={setZipcodeState} />
-          <Checkboxes filter={setStatusState} />
+          <div id="admin-dashboard">
+            <MapWrap clbk={setZipcodeState} />
+            <Checkboxes filter={setStatusState} />
+          </div>
           <AdminOrdersTable orders={filterOrders(orders)} />
         </div>
       </div>

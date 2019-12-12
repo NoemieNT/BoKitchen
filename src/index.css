@@ -76,9 +76,9 @@ code {
   color: white
 }
 
-area {
-  outline: 7px solid darkblue;
-}
+/* area {
+  outline: 3px solid rgb(21, 89, 156);
+} */
 
 .carousel {
   display: flex;
@@ -132,4 +132,16 @@ area {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: left;
+}
+
+#btn-delivered {
+  margin: 5% 25%
+}
+
+.btn {
+  margin: 5px;
+}
+
+#admin-dashboard {
+  margin: 5% 25%;
 }

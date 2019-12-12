@@ -42,9 +42,9 @@ const Dashboard = props => {
 
   return (
     <div className="container">
-      <h1 className="text-center">Welcome {currentUser.firstname}</h1>
-      <div className="row">
-        <p className="text-center">Select your delivery zone</p>
+      <h3 className="text-center mx-auto">Welcome {currentUser.firstname}</h3>
+      <p className="text-center mx-auto">Select your delivery zone</p>
+      <div>
         <MapWrap clbk={setZipcodeState} />
         <DelivererOrdersTable
           validatedOrders={filterOrders(validatedOrders)}
