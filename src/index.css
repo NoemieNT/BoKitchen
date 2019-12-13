@@ -190,7 +190,7 @@ code {
   justify-content: left;
 }
 
-<<<<<<< HEAD .text-home {
+.text-home {
   font-family: 'Gupter', serif;
   font-size: 17px;
   width: 200px;
@@ -216,7 +216,6 @@ code {
   opacity: 0.5;
 }
 
-=======>>>>>>>2006cb60aaf25ca92c97d877b6ed41883f50180d
 /* =======>SIGNIN<========== */
 
 #auth-container-signin {
@@ -260,9 +259,7 @@ code {
   color: rgb(24, 93, 112);
 }
 
-/* #deliverer-text {
-  color: rgb(24, 93, 112);
-} */
+
 
 area {
   outline: 3px solid rgb(21, 89, 156);
