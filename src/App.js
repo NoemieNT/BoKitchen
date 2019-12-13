@@ -54,18 +54,6 @@ const App = function App(props) {
                 <Route exact path="/" component={Home} />
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/menu" component={Menu} />
-<<<<<<< HEAD
-                <Route path="/SignIn" component={SignIn} />
-                <Route path="/SignUp" component={SignUp} />
-                <ProtectedRoute path="/indelivery" component={inDelivery} />
-                <ProtectedRoute path="/myaccount" component={MyAccount} />
-                <ProtectedRoute
-                  path="/admin-dashboard"
-                  component={AdminDashboard}
-                />
-                <ProtectedRoute path="/admin-manage" component={AdminManage} />
-                <ProtectedRoute path="/admin-create" component={AdminCreate} />
-=======
                 <Route path="/signIn" component={SignIn} />
                 <Route path="/signUp" component={SignUp} />
                 <Route path="/indelivery" component={inDelivery} />
@@ -73,7 +61,6 @@ const App = function App(props) {
                 <Route path="/admin-dashboard" component={AdminDashboard} />
                 <Route path="/admin-manage" component={AdminManage} />
                 <Route path="/admin-create" component={AdminCreate} />
->>>>>>> ba1c8e6f337dc0372ce58237b1eee484da624c52
                 <Route path="*" component={NotFound} />
                 <Route
                   exact
