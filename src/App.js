@@ -52,11 +52,9 @@ const App = function App(props) {
             <div className="App">
               <Switch>
                 <Route exact path="/" component={Home} />
-                <ProtectedDelivererRoute
-                  path="/dashboard"
-                  component={Dashboard}
-                />
+                <Route path="/dashboard" component={Dashboard} />
                 <Route path="/menu" component={Menu} />
+<<<<<<< HEAD
                 <Route path="/SignIn" component={SignIn} />
                 <Route path="/SignUp" component={SignUp} />
                 <ProtectedRoute path="/indelivery" component={inDelivery} />
@@ -67,14 +65,23 @@ const App = function App(props) {
                 />
                 <ProtectedRoute path="/admin-manage" component={AdminManage} />
                 <ProtectedRoute path="/admin-create" component={AdminCreate} />
+=======
+                <Route path="/signIn" component={SignIn} />
+                <Route path="/signUp" component={SignUp} />
+                <Route path="/indelivery" component={inDelivery} />
+                <Route path="/myaccount" component={MyAccount} />
+                <Route path="/admin-dashboard" component={AdminDashboard} />
+                <Route path="/admin-manage" component={AdminManage} />
+                <Route path="/admin-create" component={AdminCreate} />
+>>>>>>> ba1c8e6f337dc0372ce58237b1eee484da624c52
                 <Route path="*" component={NotFound} />
-                <ProtectedRoute
+                <Route
                   exact
                   path="/admin/:endpoint(AdminCreate|AdminDashboard|AdminManage)/:mode"
                   component={AdminAll}
                 />
 
-                <ProtectedRoute
+                <Route
                   exact
                   path="/admin/:endpoint(AdminCreate|AdminDashboard|AdminManage)/:mode/:id"
                   component={AdminAll}

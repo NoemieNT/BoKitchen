@@ -12,7 +12,8 @@ export class MapWrap extends Component {
         <img
           className="img-fluid"
           // src="https://geopolar.pagesperso-orange.fr/europe/france/paris/malet/plan-paris.gif"
-          src="http://img.over-blog.com/300x300/2/75/42/24/2010/Animateurs/carteParis.png"
+          // src="http://img.over-blog.com/300x300/2/75/42/24/2010/Animateurs/carteParis.png"
+          src="./carteParis (1).png"
           useMap="#image-map"
           alt="paris-map"
           id="paris-map"
