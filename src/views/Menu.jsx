@@ -52,42 +52,25 @@ export class Menu extends Component {
   };
 
   setFilterProduct = input => {
-    const copy = [...this.state[input.name]];
-
-    if (copy.includes(input.value)) copy.splice(copy.indexOf(input.value), 1);
-    else copy.push(input.value);
-
-    this.setState({ [input.name]: copy }, () => {
-      this.state.foods.forEach((f, i) => {
-        const catOk = this.state.category.includes(f.category);
-
-        const tagsOk =
-          this.state.tags.reduce((acc, t, i) => {
-            if (f.tags.includes(t)) acc++;
-            return acc;
-          }, 0) > 0;
-
-        if (catOk || tagsOk) {
-          const copy = [...this.state.filteredFoods];
-
-          const isAlreadyInFiltered = Boolean(
-            copy.filter(ff => ff._id === f._id).length
-          );
-
-          if (!isAlreadyInFiltered) {
-            copy.push(f);
-            this.setState({ filteredFoods: copy });
-          }
-        } else {
-          const copy = [...this.state.filteredFoods];
-          const needle = copy.filter(ff => ff._id === f._id)[0];
-          if (needle) {
-            const index = copy.indexOf(needle);
-            copy.splice(index, 1);
-            this.setState({ filteredFoods: copy });
-          }
-        }
+    if (input.checked) {
+      this.setState({ [input.name]: [...this.state[input.name], input.value] });
+    } else {
+      this.setState({
+        [input.name]: [...this.state[input.name].filter(c => c !== input.value)]
       });
+    }
+  };
+
+  filterFood = () => {
+    console.log(this.state.foods);
+    return this.state.foods.filter(f => {
+      for (let tag of f.tags) {
+        console.log(tag, this.state.tags);
+        if (this.state.tags.includes(tag)) {
+          return true;
+        }
+      }
+      if (this.state.category.includes(f.category)) return true;
     });
   };
 
@@ -105,8 +88,8 @@ export class Menu extends Component {
             <ProductsTable
               productSelectionClbk={this.handleSelectedProducts}
               foods={
-                this.state.filteredFoods.length
-                  ? this.state.filteredFoods
+                this.state.category.length || this.state.tags.length
+                  ? this.filterFood()
                   : this.state.foods
               }
             />

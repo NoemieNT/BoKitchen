@@ -38,8 +38,10 @@ export default withRouter(function Cart({ products, foods, history }) {
   return (
     <div>
       <div className="input-group d-flex flex-sm-column">
-        <h1>Your cart</h1>
-        {!products.length && <p>no product selected yet...</p>}
+        <h1 className="text-center">Your cart</h1>
+        {!products.length && (
+          <p className="text-center">no product selected yet...</p>
+        )}
         {Boolean(products.length) && (
           <div>
             <div>
@@ -136,6 +138,7 @@ export default withRouter(function Cart({ products, foods, history }) {
                 role="button"
                 aria-pressed="true"
                 onClick={createOrder}
+                id="btn-manage"
               >
                 Validate your order
               </a>

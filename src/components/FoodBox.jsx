@@ -40,7 +40,13 @@ export class FoodBox extends Component {
                   min="0"
                   onChange={this.handleChange}
                 />
-                <button onClick={this.handleSubmit}>Add to cart</button>
+                <button
+                  onClick={this.handleSubmit}
+                  className="btn btn-info"
+                  id="btn-addtocart"
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>

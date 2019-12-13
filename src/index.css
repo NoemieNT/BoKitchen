@@ -32,6 +32,7 @@ code {
 }
 
 .container-fluid {
+  /* background-color: rgb(243, 236, 218); */
   min-height: 100vh;
   padding: 0px;
 }
@@ -88,17 +89,21 @@ code {
 }
 
 /* =======> PAGE MENU <========= */
-.container-menu {
-  width: 100vw;
+.container.container-menu {
+  /* width: 100%; */
   height: 100vh;
-  margin-top: 20px;
+  /* margin: 0px !important; */
+  font-family: 'Gupter', serif;
+  font-weight: 100px;
 }
 
 #filter-table {
   padding: 20px;
   background-color: rgb(229, 234, 248);
-  font-family: 'Gupter', serif;
-  font-weight: 100px;
+}
+
+#btn-addtocart {
+  margin-left: 27px;
 }
 
 .auth-container {
@@ -117,9 +122,8 @@ code {
   justify-content: space-evenly;
   align-items: baseline;
   align-content: space-around;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(243, 236, 218);
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .carousel-item {
@@ -134,7 +138,6 @@ code {
   max-height: 100%;
 }
 
-/* =======>HomePage THUMBNAILS <======== */
 .thumbnails {
   display: flex;
   flex-direction: row;
@@ -151,33 +154,19 @@ code {
   width: 200px;
 }
 
+.rounded-circle {
+  padding: 10px;
+  height: 100px;
+  width: 150px;
+}
 
-.col-home {
-  width: 300px;
+.col-sm-3 {
+  width: 200px;
   height: 300px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: left;
-}
-
-.text-home {
-  font-family: 'Gupter', serif;
-  font-size: 17px;
-  width: 200px;
-  height: 30px;
-}
-
-#footer {
-  margin: 0px;
-  background-color: #E7A724;
-  height: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-shrink: none;
-  color: #222C30;
-  font-family: 'Gupter', serif;
 }
 
 /* =======>SIGNIN<========== */

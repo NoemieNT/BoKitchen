@@ -149,7 +149,7 @@ export default class CreateFood extends Component {
             </select>
           </div>
           <button className="btn btn-info" onClick={this.handleSubmit}>
-            Add to collection
+            Add to the menu
           </button>
         </div>
 
