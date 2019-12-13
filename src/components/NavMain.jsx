@@ -23,7 +23,6 @@ export default withRouter(function NavMain(props) {
   return !currentUser || currentUser.role === "CUSTOMER" ? (
     <div className="navBar">
       <nav className="navbar navbar-expand-lg">
-        {/* <ul className="navbar-nav mr-auto mt-2 mt-md-0"> */}
         <ul className="navbar-nav">
           <li className="nav-item active">
             <NavLink className="navbar-brand" exact to="/">
@@ -31,8 +30,6 @@ export default withRouter(function NavMain(props) {
                 <img id="logo" src="./lemon.png" alt="logo"></img>
               </div>
             </NavLink>
-            {/* </li>
-          <li className="nav-item"> */}
             <NavLink className="items" to="/menu">
               Menu
             </NavLink>
