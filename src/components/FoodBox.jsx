@@ -16,8 +16,9 @@ export class FoodBox extends Component {
     return (
       <div className="col-md-4">
         <div className="card mb-4 shadow-sm">
-          <div className="card">
+          <div className="card" id="foodbox">
             <img
+              id="card-img"
               className="bd-placeholder-img card-img-top"
               width="100%"
               height="100"

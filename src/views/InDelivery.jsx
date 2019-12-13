@@ -28,10 +28,12 @@ const InDelivery = props => {
   if (isLoading || !order.length || !currentUser) return null;
 
   return currentUser.role === "DELIVERER" ? (
-    <div className="auth-container">
-      <div className="card">
-        <h3 className="card-header text-center">Your delivery</h3>
-        <OrderCard order={order} handleClick={updateOrder} />
+    <div id="indelivery-container">
+      <div className="auth-container">
+        <div className="card">
+          <h3 className="card-header text-center">Your delivery</h3>
+          <OrderCard order={order} handleClick={updateOrder} />
+        </div>
       </div>
     </div>
   ) : (

@@ -16,10 +16,11 @@ export default class ProductsTable extends Component {
       <div className="d-flex flex-wrap">
         <div className="d-flex flex-sm-wrap">
           {this.props.foods.map((food, i) => (
-            <div className="col-md-4">
+            <div className="col-md-4" id="foodbox">
               <div className="card mb-4 shadow-sm">
                 <div className="card" key={i}>
                   <img
+                    id="card-img"
                     src={food.picture}
                     className="card-img-top"
                     alt={food.name}
@@ -60,7 +61,7 @@ export default class ProductsTable extends Component {
                     <span>$</span>
                     <p></p>
                     <button
-                      className="btn btn-primary"
+                      className="btn btn-block btn-info"
                       onClick={e =>
                         this.props.handleEdit(food._id, this.state.infos)
                       }
@@ -69,7 +70,7 @@ export default class ProductsTable extends Component {
                     </button>
                     <button
                       onClick={evt => this.props.handleDelete(food._id)}
-                      className="btn btn-primary"
+                      className="btn btn-block" id="btn-manage"
                     >
                       Delete
                     </button>

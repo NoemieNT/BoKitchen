@@ -51,7 +51,7 @@ const AdminManage = props => {
     <div className="container">
       <div className="row">
         <AdminSidebar />
-        <div className="col-md-8 order-md-2">
+        <div className="col-md-8 order-md-2" id="admin-manage-container">
           <SearchBar clbk={handleSearch} />
           <AdminProductsTable
             foods={currentFood.length ? currentFood : foods}

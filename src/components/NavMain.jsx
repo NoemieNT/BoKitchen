@@ -56,8 +56,6 @@ export default withRouter(function NavMain(props) {
                 <img id="logo" src="./lemon.png" alt="logo"></img>
               </div>
             </NavLink>
-
-            <span className="item">Hello {currentUser.firstname}</span>
             <NavLink className="item-sign" to="/SignIn">
               Sign In
             </NavLink>

@@ -9,11 +9,15 @@ const AdminSidebar = props => {
       <div className="sidebar-sticky">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className="nav-link active" href="/admin-dashboard">
+            <a
+              id="admin-sidebarLinks"
+              className="nav-link active"
+              href="/admin-dashboard"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -29,7 +33,11 @@ const AdminSidebar = props => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/admin-create">
+            <a
+              id="admin-sidebarLinks"
+              className="nav-link"
+              href="/admin-create"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -50,7 +58,11 @@ const AdminSidebar = props => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/admin-manage">
+            <a
+              id="admin-sidebarLinks"
+              className="nav-link"
+              href="/admin-manage"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
