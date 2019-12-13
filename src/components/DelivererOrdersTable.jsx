@@ -17,7 +17,7 @@ export default function DelivererOrdersTable({ validatedOrders, handleClick }) {
         <tbody>
           {!validatedOrders.length ? (
             <tr>
-              <td colspan="5">No order to display</td>
+              <td colspan="5">Sorry, there is no order in this zone</td>
             </tr>
           ) : (
             validatedOrders.map((validatedOrders, i) => (

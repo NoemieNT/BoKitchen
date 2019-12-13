@@ -42,7 +42,6 @@ export class Menu extends Component {
       let existingLine = this.state.products.filter(
         element => element.id === selectedProduct.input.id
       );
-      console.log(existingLine);
       existingLine[0].quantity = selectedProduct.input.quantity;
       if (selectedProduct.input.quantity !== 0) {
         copy.push(existingLine[0]);
@@ -77,9 +76,7 @@ export class Menu extends Component {
 
           if (!isAlreadyInFiltered) {
             copy.push(f);
-            this.setState({ filteredFoods: copy }, () => {
-              console.log("filtered ?", this.state.filteredFoods);
-            });
+            this.setState({ filteredFoods: copy });
           }
         } else {
           const copy = [...this.state.filteredFoods];
@@ -87,9 +84,7 @@ export class Menu extends Component {
           if (needle) {
             const index = copy.indexOf(needle);
             copy.splice(index, 1);
-            this.setState({ filteredFoods: copy }, () => {
-              console.log("filtered ?", this.state.filteredFoods);
-            });
+            this.setState({ filteredFoods: copy });
           }
         }
       });
@@ -98,8 +93,8 @@ export class Menu extends Component {
 
   render() {
     return (
-      <div className="container-menu">
-        <div className="row-menu">
+      <div className="container container-menu">
+        <div className="row row-menu">
           <div
             id="filter-table"
             className="filter-table col-md-2 order-md-1 d-none d-md-block sidebar"

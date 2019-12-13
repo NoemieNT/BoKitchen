@@ -8,7 +8,7 @@ export default class SignUp extends Component {
     firstname: "Hanna",
     lastname: "M",
     email: "hanna@m.you",
-    password: "12345"
+    password: "1234"
   };
 
   handleSubmit = async e => {
@@ -22,7 +22,6 @@ export default class SignUp extends Component {
   };
 
   handleChange = e => {
-    console.log(e.target);
     this.setState({ [e.target.name]: e.target.value });
   };
 

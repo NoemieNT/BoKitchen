@@ -28,7 +28,6 @@ const AdminDashboard = props => {
   };
 
   const setStatusState = input => {
-    console.log(status);
     if (input.checked) {
       setStatus([...status, input.value]);
     } else setStatus(status.filter(i => i !== input.value));

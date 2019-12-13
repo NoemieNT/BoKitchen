@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import OrderCard from "../components/OrderCard";
+import OrderCardCustomer from "../components/OrderCardCustomer";
 import APIHandler from "./../api/handler";
 import { useAuth } from "./../auth/UseAuth";
 
@@ -10,7 +11,6 @@ const InDelivery = props => {
   useEffect(() => {
     APIHandler.get("/current-order")
       .then(res => {
-        console.log("res details", res, currentUser);
         setOrder(res.data.filter(o => o.status !== "DELIVERED"));
       })
       .catch(err => {
@@ -25,13 +25,20 @@ const InDelivery = props => {
       .catch(err => console.log(err));
   };
 
-  if (isLoading || !order.length) return null;
+  if (isLoading || !order.length || !currentUser) return null;
 
-  return (
+  return currentUser.role === "DELIVERER" ? (
     <div className="auth-container">
       <div className="card">
         <h3 className="card-header text-center">Your delivery</h3>
         <OrderCard order={order} handleClick={updateOrder} />
+      </div>
+    </div>
+  ) : (
+    <div className="auth-container">
+      <div className="card">
+        <h3 className="card-header text-center">Your delivery</h3>
+        <OrderCardCustomer order={order} handleClick={updateOrder} />
       </div>
     </div>
   );
