@@ -40,7 +40,7 @@ const App = function App(props) {
   };
 
   return (
-    // the context provider will make currentUser informations down the component tree
+    // the context provider will mssake currentUser informations down the component tree
     <UserContext.Provider value={UserContextValue}>
       {isLoading ? null : (
         <React.Fragment>
