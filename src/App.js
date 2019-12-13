@@ -18,6 +18,7 @@ import AdminAll from "./views/AdminAll";
 import NavMain from "./components/NavMain";
 import Account from "./components/Account";
 import NotFound from "./components/NotFound";
+import Footer from "./components/Footer";
 // import SearchBar from "./components/SearchBar";
 
 // auth
@@ -80,6 +81,9 @@ const App = function App(props) {
                 />
                 {/* //my account user// dashboard delivery // admin  */}
               </Switch>
+              <div>
+                <Footer />
+              </div>
             </div>
           </div>
         </React.Fragment>
