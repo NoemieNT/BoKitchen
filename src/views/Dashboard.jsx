@@ -41,7 +41,7 @@ const Dashboard = props => {
   if (!currentUser) return null;
 
   return (
-    <div className="container">
+    <div className="container" id="deliverer-container">
       <h3 className="text-center mx-auto">Welcome {currentUser.firstname}</h3>
       <p className="text-center mx-auto">Select your delivery zone</p>
       <div>

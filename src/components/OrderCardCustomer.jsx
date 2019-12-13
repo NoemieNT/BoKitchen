@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import OrderDetails from "./OrderDetails";
 import APIHandler from "./../api/handler";
 
-export default class OrderCard extends Component {
+export default class OrderCardCustomer extends Component {
   state = {
     foods: [],
     totalPrice: ""
@@ -48,14 +48,6 @@ export default class OrderCard extends Component {
                   }, 0) + 2.5}
                 </li>
               </ul>
-              <a
-                href="/dashboard"
-                onClick={evt => this.props.handleClick(order._id)}
-                className="btn btn-primary"
-                id="btn-delivered"
-              >
-                Delivered
-              </a>
             </div>
           ))}
         </div>

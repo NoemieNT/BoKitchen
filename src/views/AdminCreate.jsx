@@ -9,7 +9,6 @@ const AdminCreate = props => {
   const { currentUser } = useAuth();
 
   const createFood = infos => {
-    console.log(infos);
     APIHandler.post("/create-food", infos)
       .then(res => console.log(res))
       .catch(err => console.log(err));

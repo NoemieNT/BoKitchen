@@ -43,10 +43,9 @@ const App = function App(props) {
     <UserContext.Provider value={UserContextValue}>
       {isLoading ? null : (
         <React.Fragment>
-          <div class="container-fluid">
+          <div id="container-fluid">
             <header id="header-main">
               <NavMain />
-              {/* <SearchBar /> */}
             </header>
 
             <div className="App">

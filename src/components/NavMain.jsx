@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import APIHandler from "./../api/handler";
 import UserContext from "./../auth/UserContext";
+import { useAuth } from "./../auth/UseAuth";
 
 export default withRouter(function NavMain(props) {
   const userContext = useContext(UserContext);
   const { setCurrentUser } = userContext;
+  const { currentUser } = useAuth();
 
-  // go go go
   const handleSignout = async () => {
     try {
       const x = await APIHandler.get("/logout");
@@ -19,37 +20,50 @@ export default withRouter(function NavMain(props) {
     }
   };
 
-  return (
+  return !currentUser || currentUser.role === "CUSTOMER" ? (
     <div className="navBar">
       <nav className="navbar navbar-expand-lg">
-        <ul className="navbar-nav mr-auto mt-2 mt-md-0">
+        {/* <ul className="navbar-nav mr-auto mt-2 mt-md-0"> */}
+        <ul className="navbar-nav">
           <li className="nav-item active">
-            <NavLink className="items" exact to="/">
+            <NavLink className="navbar-brand" exact to="/">
               <div>
-                {" "}
-                <img src="./lemon.png"></img>
+                <img id="logo" src="./lemon.png" alt="logo"></img>
               </div>
             </NavLink>
-          </li>
-          <li className="nav-item">
+            {/* </li>
+          <li className="nav-item"> */}
             <NavLink className="items" to="/menu">
-              {" "}
-              Menu{" "}
+              Menu
             </NavLink>
-            <NavLink className="items" to="/cheackout">
-              {" "}
-              Checkout{" "}
-            </NavLink>
-            {/* <NavLink className="items" to="/myaccount">
-              {" "}
-              My Account
-            </NavLink> */}
             <NavLink className="item-sign" to="/SignIn">
-              {" "}
-              Sign In{" "}
+              Sign In
             </NavLink>
             <span className="item-signout" onClick={handleSignout}>
-              signout
+              Sign Out
+            </span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  ) : (
+    <div className="navBar">
+      <nav className="navbar navbar-expand-lg">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <NavLink className="navbar-brand" exact to="/ ">
+              <div>
+                <img id="logo" src="./lemon.png" alt="logo"></img>
+              </div>
+            </NavLink>
+
+            <span className="item">Hello {currentUser.firstname}</span>
+            <NavLink className="item-sign" to="/SignIn">
+              Sign In
+            </NavLink>
+
+            <span className="item-signout" onClick={handleSignout}>
+              Sign Out
             </span>
           </li>
         </ul>

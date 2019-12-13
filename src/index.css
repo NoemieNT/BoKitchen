@@ -32,8 +32,9 @@ code {
 }
 
 .container-fluid {
-  background-color: rgb(243, 236, 218);
-
+  /* background-color: rgb(243, 236, 218); */
+  min-height: 100vh;
+  padding: 0px;
 }
 
 /* NAVBAR  */
@@ -45,12 +46,12 @@ code {
 .navbar {
   margin: 0px;
   background-color: #E7A724;
-  height: 100px;
+  height: 50px;
   position: fixed;
   top: 0;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   display: flex;
   justify-content: space-between;
 }
@@ -82,6 +83,11 @@ code {
   flex-grow: 8
 }
 
+#logo {
+  height: 50%;
+  width: 50%;
+}
+
 /* =======> PAGE MENU <========= */
 .container-menu {
   width: 1200px;
@@ -104,8 +110,8 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1200px;
-  height: 800px;
+  width: 100vw;
+  height: 100vh;
   margin-top: 20px;
 }
 
@@ -172,7 +178,6 @@ code {
   justify-content: left;
 }
 
-<<<<<<< HEAD
 /* =======>SIGNIN<========== */
 
 #auth-container-signin {
@@ -200,7 +205,8 @@ code {
 .forgot-password {
   padding: 5px;
   font-size: 20px;
-=======
+}
+
 #btn-delivered {
   margin: 5% 25%
 }
@@ -211,5 +217,14 @@ code {
 
 #admin-dashboard {
   margin: 5% 25%;
->>>>>>> e4fa50f877e603c38d06c4aa06052c0622270761
+}
+
+#admin-sidebar {
+  height: 125vh;
+  margin-right: 30px;
+}
+
+
+#deliverer-container {
+  background: white;
 }

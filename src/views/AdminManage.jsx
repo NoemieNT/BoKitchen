@@ -39,8 +39,6 @@ const AdminManage = props => {
   };
 
   const handleSearch = input => {
-    console.log(input);
-    console.log(currentFood);
     let filtered = foods.filter(f =>
       f.name.toLowerCase().includes(input.toLowerCase())
     );
