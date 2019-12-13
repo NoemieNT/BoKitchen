@@ -32,6 +32,7 @@ code {
 }
 
 .container-fluid {
+  /* background-color: rgb(243, 236, 218); */
   min-height: 100vh;
   padding: 0px;
 }
@@ -88,21 +89,21 @@ code {
 }
 
 /* =======> PAGE MENU <========= */
-.container-menu {
-  width: 1200px;
-  height: 800px;
-}
-
-.row-menu {
-  margin: 20px;
-
+.container.container-menu {
+  /* width: 100%; */
+  height: 100vh;
+  /* margin: 0px !important; */
+  font-family: 'Gupter', serif;
+  font-weight: 100px;
 }
 
 #filter-table {
   padding: 20px;
   background-color: rgb(229, 234, 248);
-  font-family: 'Gupter', serif;
-  font-weight: 100px;
+}
+
+#btn-addtocart {
+  margin-left: 27px;
 }
 
 .auth-container {
@@ -114,11 +115,14 @@ code {
   margin-top: 20px;
 }
 
+<<<<<<< HEAD
 
 #deliveryChoice {
   color: white
 }
 
+=======
+>>>>>>> 2006cb60aaf25ca92c97d877b6ed41883f50180d
 .carousel {
   padding-bottom: 100px;
   display: flex;
@@ -127,8 +131,13 @@ code {
   justify-content: space-evenly;
   align-items: baseline;
   align-content: space-around;
+<<<<<<< HEAD
   width: 100%;
   height: 100%;
+=======
+  max-width: 100%;
+  max-height: 100%;
+>>>>>>> 2006cb60aaf25ca92c97d877b6ed41883f50180d
 }
 
 .carousel-item {
@@ -143,7 +152,6 @@ code {
   max-height: 100%;
 }
 
-/* =======>HomePage THUMBNAILS <======== */
 .thumbnails {
   display: flex;
   flex-direction: row;
@@ -160,16 +168,22 @@ code {
   width: 200px;
 }
 
+.rounded-circle {
+  padding: 10px;
+  height: 100px;
+  width: 150px;
+}
 
-.col-home {
-  width: 300px;
+.col-sm-3 {
+  width: 200px;
   height: 300px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: left;
 }
 
+<<<<<<< HEAD
 .text-home {
   font-family: 'Gupter', serif;
   font-size: 17px;
@@ -196,6 +210,8 @@ code {
   opacity: 0.5;
 }
 
+=======
+>>>>>>> 2006cb60aaf25ca92c97d877b6ed41883f50180d
 /* =======>SIGNIN<========== */
 
 #auth-container-signin {
@@ -233,6 +249,108 @@ code {
   margin: 5px;
 }
 
-#admin-dashboard {
-  margin: 5% 25%;
+/* =======>DELIVERER PROFIL<========== */
+
+#deliverer-welcome {
+  color: rgb(24, 93, 112);
+}
+
+/* #deliverer-text {
+  color: rgb(24, 93, 112);
+} */
+
+area {
+  outline: 3px solid rgb(21, 89, 156);
+}
+
+#deliverer-container {
+  height: 100vh;
+  margin: 0px;
+  padding-top: 30px;
+  font-family: 'Gupter', serif;
+  font-weight: 100px;
+  color: #A99D95
+}
+
+#deliveryChoice {
+  color: rgb(24, 93, 112);
+  font-size: 1em
+}
+
+#deliverer-table {
+  padding-top: 20px;
+}
+
+#indelivery-container {
+  background: rgb(240, 240, 240);
+  padding-top: 40px;
+}
+
+/* =======>ADMIN PROFIL<========== */
+
+#admin-sidebarLinks {
+  margin: 10px 0px 0px;
+  color: #2F97B3;
+  font-family: 'Gupter', serif;
+  font-weight: 100px;
+}
+
+#admin-container {
+  padding: 50px 0px 100px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Gupter', serif;
+  font-weight: 100px;
+  color: #A99D95
+}
+
+#checkbox-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 40px;
+}
+
+#create-container {
+  margin: 20px 50px;
+  font-family: 'Gupter', serif;
+  font-weight: 100px;
+  color: #A99D95
+}
+
+
+#btn-submit-signin {
+  border-radius: 7px;
+  background-color: #E7A724;
+  border-color: #E7A724;
+  font-family: 'Gupter', serif;
+  font-weight: 100px;
+  font-size: 20px;
+}
+
+#admin-manage-container {
+  padding: 20px 0px 20px 20px;
+  font-family: 'Gupter', serif;
+  font-weight: 100px;
+}
+
+#searchbar {
+  margin: 20px;
+}
+
+#card-img {
+  width: 100%;
+  height: 120px;
+}
+
+#foodbox {
+  min-width: 200px;
+}
+
+#btn-manage {
+  border-radius: 7px;
+  background-color: #E7A724;
+  border-color: #E7A724;
+  font-family: 'Gupter', serif;
+  color: white;
 }

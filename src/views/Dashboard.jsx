@@ -42,8 +42,8 @@ const Dashboard = props => {
 
   return (
     <div className="container" id="deliverer-container">
-      <h3 className="text-center mx-auto">Welcome {currentUser.firstname}</h3>
-      <p className="text-center mx-auto">Select your delivery zone</p>
+      <h3 id="deliverer-welcome" className="text-center mx-auto">Welcome {currentUser.firstname}</h3>
+      <p id="deliverer-text" className="text-center mx-auto">Select your delivery zone</p>
       <div>
         <MapWrap clbk={setZipcodeState} />
         <DelivererOrdersTable

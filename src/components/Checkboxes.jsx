@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class Checkboxes extends Component {
   render() {
     return (
-      <div className="input-group">
+      <div className="input-group" id="checkbox-wrap">
         <div className="form-check">
           <input
             onChange={e => this.props.filter(e.target)}

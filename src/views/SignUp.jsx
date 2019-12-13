@@ -29,7 +29,7 @@ export default class SignUp extends Component {
     const { email, password, firstname, lastname } = this.state;
     return (
       <React.Fragment>
-        <div className="auth-container">
+        <div className="auth-container" id="auth-container-signin">
           <form
             className="form"
             onSubmit={this.handleSubmit}
@@ -90,7 +90,11 @@ export default class SignUp extends Component {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block">
+            <button
+              id="btn-submit-signin"
+              type="submit"
+              className="btn btn-primary btn-block"
+            >
               Sign Up
             </button>
             <p className="forgot-password text-right">

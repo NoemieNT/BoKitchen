@@ -6,6 +6,7 @@ class SearchBar extends Component {
       <form
         className="searchBar"
         onChange={evt => this.props.clbk(evt.target.value)}
+        id="searchbar"
       >
         <label className="label" htmlFor="searchBar">
           Search

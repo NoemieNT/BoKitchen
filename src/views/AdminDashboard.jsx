@@ -53,12 +53,12 @@ const AdminDashboard = props => {
     <div className="container">
       <div className="row">
         <AdminSidebar />
-        <div className="col-md-8 order-md-2">
-          <h1 className="text-center">Dashboard</h1>
-          <div id="admin-dashboard">
-            <MapWrap clbk={setZipcodeState} />
-            <Checkboxes filter={setStatusState} />
-          </div>
+        <div className="col-md-8 order-md-2" id="admin-container">
+          <h1 className="text-center" id="admin-title">
+            BoKitchen Dashboard
+          </h1>
+          <MapWrap clbk={setZipcodeState} />
+          <Checkboxes filter={setStatusState} />
           <AdminOrdersTable orders={filterOrders(orders)} />
         </div>
       </div>

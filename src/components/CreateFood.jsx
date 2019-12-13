@@ -46,7 +46,7 @@ export default class CreateFood extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row" id="create-container">
         <div className="col-md-8 order-md-2">
           <h3 className="form-title">Add food to the menu</h3>
           <div className="form-group">
@@ -148,8 +148,8 @@ export default class CreateFood extends Component {
               ))}
             </select>
           </div>
-          <button className="submit" onClick={this.handleSubmit}>
-            Add to collection
+          <button className="btn btn-info" onClick={this.handleSubmit}>
+            Add to the menu
           </button>
         </div>
 
@@ -168,7 +168,7 @@ export default class CreateFood extends Component {
                 onChange={this.handleTagChange}
               />
             </div>
-            <button className="submit" onClick={this.createTag}>
+            <button className="btn btn-info" onClick={this.createTag}>
               Create this tag
             </button>
           </div>

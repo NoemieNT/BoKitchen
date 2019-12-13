@@ -48,13 +48,11 @@ export default withRouter(function NavMain(props) {
       <nav className="navbar navbar-expand-lg">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink className="navbar-brand" exact to="/ ">
+            <NavLink className="navbar-brand" exact to="/">
               <div>
                 <img id="logo" src="./lemon.png" alt="logo"></img>
               </div>
             </NavLink>
-
-            <span className="item">Hello {currentUser.firstname}</span>
             <NavLink className="item-sign" to="/SignIn">
               Sign In
             </NavLink>
