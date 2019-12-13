@@ -30,14 +30,21 @@ export class Home extends Component {
               src="./Yellow and Black Circles Photography Logo (1).png"
               alt="Salade thumbnail"
             />
+            <p class="text-home">
+              Local food is food that is produced within a short distance of
+              where it is consumed
+            </p>
           </div>
 
-          <div class="col-sm-3">
+          <div id="col-home" class="col-sm-3">
             <img
               className="thumbnail-img"
               src="./Yellow and Black Circles Photography Logo (2).png"
               alt="Pasta thumbnail"
             />
+            <p class="text-home">
+              We pride ourselves with amazing food in quality and taste.
+            </p>
           </div>
           <div class="col-sm-3">
             <img
@@ -45,6 +52,10 @@ export class Home extends Component {
               src="./Yellow and Black Circles Photography Logo.png"
               alt="Burger thumbnail"
             />
+            <p class="text-home">
+              Organic food is food produce by methods that comply with the
+              standards of organic farming.
+            </p>
           </div>
         </div>
       </div>
