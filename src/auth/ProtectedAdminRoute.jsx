@@ -8,6 +8,6 @@ export const ProtectedAdminRoute = ({ component: Component, ...rest }) => {
   return currentUser && currentUser.role === "ADMIN" ? (
     <Route {...rest} render={props => <Component {...props} />} />
   ) : (
-    <Redirect to="/admin-dashboard" />
+    <Redirect to="/SignIn" />
   );
 };

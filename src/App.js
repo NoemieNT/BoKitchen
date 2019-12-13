@@ -57,8 +57,8 @@ const App = function App(props) {
                   component={Dashboard}
                 />
                 <Route path="/menu" component={Menu} />
-                <Route path="/signIn" component={SignIn} />
-                <Route path="/signUp" component={SignUp} />
+                <Route path="/SignIn" component={SignIn} />
+                <Route path="/SignUp" component={SignUp} />
                 <ProtectedRoute path="/indelivery" component={inDelivery} />
                 <ProtectedRoute path="/myaccount" component={MyAccount} />
                 <ProtectedRoute

@@ -8,6 +8,6 @@ export const ProtectedDelivererRoute = ({ component: Component, ...rest }) => {
   return currentUser && currentUser.role === "DELIVERER" ? (
     <Route {...rest} render={props => <Component {...props} />} />
   ) : (
-    <Redirect to="/dashboard" />
+    <Redirect to="/SignIn" />
   );
 };
